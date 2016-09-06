@@ -1,0 +1,10 @@
+Podstawowymi komponentami Dockera sa:
+demon Dockera,
+komunikujacy sie z nim klient
+repozytorium obrazów.
+
+Demon Dockera jest odpowiedzialny za zarzadzanie obrazami i kontenerami, np.: pobiera obrazy z repozytorium, buduje obrazy, uruchamia kontenery.
+
+Klient Dockera umozliwia wydawanie polecen demonowi. Komunikacja pomiedzy klientem a demonem odbywa sie za pomoca protokolu HTTP. W przypadku komunikacji lokalnej wykorzystywane sa do tego gniazda UNIX, a w przypadku komunikacji zdalnej gniazda TCP.
+
+Repozytorium obrazów przechowuje obrazy kontenerów Dockera. W ekosystemie Dockera znajduje sie jedno oficjalne repozytorium (docker hub). Zawiera ono oficjalne obrazy oraz obrazy udostepnione przez innych uzytkowników. Istnieje równiez mozliwosc uruchomienia prywatnego repozytorium.

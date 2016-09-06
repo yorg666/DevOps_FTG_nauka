@@ -1,0 +1,5 @@
+(LXC, ang. Linux Containers)
+(cgroups)  zarzadzanie ich zasobami
+(namespaces) odizolowanie ich od systemu operacyjnego
+(runC) nowy format kontenerów: który implementuje standard OCF (ang. Open Container Format)
+(UFS, ang. Union File System) Ujednolicony system plików 
