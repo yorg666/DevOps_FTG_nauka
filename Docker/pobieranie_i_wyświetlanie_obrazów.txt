@@ -1,0 +1,11 @@
+Obraz z repozytorium Dockera można pobrać za pomocą polecenia:
+docker pull [nazwa obrazu]
+
+Wszystkie nazwy obrazów zbudowane są w formacie: [nazwa repozytorium]:[tag]
+np docker pull ubuntu:15.10
+
+docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+ubuntu              15.10               5eb72b199374        4 weeks ago         131.4 MB
+redis               latest              0643f0c7d17d        4 weeks ago         109.2 MB
+postgres            latest              b305a133422a        4 weeks ago         265.1 MB

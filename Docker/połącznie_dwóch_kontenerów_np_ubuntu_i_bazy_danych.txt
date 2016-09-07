@@ -1,0 +1,20 @@
+Połączenie kontener – kontener
+Kontenery mogą udostępniać swoje porty innym kontenerom bez konieczności eksponowania ich do systemu gospodarza. Żeby to zrobić należy udostępnić co najmniej jeden port kontenera za pomocą opcji --expose, a następnie połączyć kontenery za pomocą opcji --link.
+
+Uruchommy kontener bazy danych udostępniający port 5432 za pomocą opcji --expose.
+
+docker run -d --expose=5432 --name="postgres-container" postgres
+Uruchommy kontener ubuntu i połączmy go z kontenerem bazy danych za pomocą opcji --link.
+
+docker run -d -it --name="ubuntu-container" --link="postgres-container" ubuntu
+Otwórzmy powłokę kontenera ubuntu uzyskując swobodny dostęp do jego systemu plików.
+
+docker attach ubuntu-container
+Użycie opcji --link powoduje, zmapowanie adresu IP kontenera bazy danych na nazwę postgres-container. Możemy to łatwo sprawdzić wyświetlając zawartość pliku /etc/hosts.
+
+cat /etc/hosts
+Doinstalujmy do ubuntu klienta postgresa i spróbujmy połączyć się z serwerem bazy danych z kontenera postgres-container.
+
+apt-get install -y postgres-client
+psql -U postgres -h postgres-container
+W wyniku powyższych poleceń powinniśmy uzyskać dostęp do wiersza poleceń serwera bazy danych postgres.

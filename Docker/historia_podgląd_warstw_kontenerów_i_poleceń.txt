@@ -1,0 +1,16 @@
+Każdy obraz Dockera powstaje w wyniku wykonania szeregu poleceń. Każde z tych poleceń tworzy osobną warstwę obrazu. Listę wszystkich warstw składających się na obraz można wyświetlić za pomocą polcenia:
+
+docker history [id lub nazwa obrazu]
+ 
+warstwowa natura obrazów i kontenerów Dockera. 
+Widać po nim, że każda warstwa jest wynikiem wykonania jakiegoś polecenia, np. instalacji pakietu, stworzenia zmiennej środowiskowej, stworzenia katalogu.
+
+skrócony wykaz warstw obrazu postgres.
+IMAGE               CREATED             CREATED BY                                      SIZE
+[...]                               
+11f38e247778        4 weeks ago         /bin/sh -c mkdir /docker-entrypoint-initdb.d    0 B          
+f114dda4521b        4 weeks ago         /bin/sh -c ENV LANG=en_US.utf8                  0 B       
+c27cdb916a4a        4 weeks ago         /bin/sh -c apt-get update && apt-get install    19.47 MB   
+[...]
+
+Polecenia tworzące warstwy obrazu można też przejrzeć czytając kod źródłowym obrazu. Plik z kodem źródłowym jest nazywany „Dockerfile”. Pliki źródłowe wszystkich obrazów znajdujących się w repozytorium Dockera są publicznie dostępne. Omówienie składni plików źródłowych obrazów jest tematem na osobny wpis i na tym etapie dobrze jest podejść do nich czysto poglądowo.

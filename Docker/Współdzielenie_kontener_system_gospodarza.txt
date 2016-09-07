@@ -1,0 +1,15 @@
+W niektórych sytuacjach możemy chcieć żeby kontener miał dostęp do plików znajdujących się w systemie gospodarza. Jeżeli w systemie gospodarza posiadamy kod aplikacji internetowej, którą chcemy uruchomić za pomocą serwera HTTP działającego w kontenerze wtedy serwer HTTP powinien mieć dostęp do katalogu projektu. Współdzielenie plików z kontenerem można zrealizować za pomocą opcji -v (--volume) w poleceniu docker run.
+
+docker run -v [zasób systemu plików gospodarza]:[punkt montowania w kontenerze] [nazwa obrazu]
+W katalogu domowym stwórzmy katalog docker zawierający plik index.html o treści „Hello, world!”.
+
+mkdir ~/docker
+echo "Hello, world!" >> index.html
+Stwórzmy kontener na podstawie obrazu python:3.5-slim, który:
+
+Montuje katalog ~/docker w punkcie /shared_volume.
+Uruchamia serwer HTTP działający na porcie 8000.
+Udostępnia port 8000 w systemie gospodarza.
+docker run -d -v ~/docker:/shared_volume -p 8000:8000 python:3.5-slim /bin/bash -c "cd /shared_volume && python -m http.server 8000"
+
+W wyniku wykonania powyższych poleceń po otwarciu adresu http://127.0.0.1:8000/ powinniśmy zobaczyć napis „Hello, world!”. Każda modyfikacja pliku index.html w systemie gospodarza powinna być widoczna po odświeżeniu przeglądarki.

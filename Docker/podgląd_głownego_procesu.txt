@@ -1,0 +1,36 @@
+Pogląd aktywności głównego procesu kontenera można uzyskać poprzez połączenie własnego okna terminala ze strumieniami wejścia/wyjścia głównego procesu kontenerem. Służy do tego polecenie docker attach. Połączenie może być ustanowione tylko z działającym kontenerem.
+
+docker attach [id lub nazwa kontenera]
+
+Dla przykładu uruchommy kontener obrazu ubuntu z opcją -d (proces drugoplanowy) i poleceniem: /bin/sh -c 'while true; do date; sleep 1; done'. W wyniku zadanego polecenia kontener co jedną sekundę będzie wyświetlał aktualną datę.
+
+docker run --name="ubuntu-container" -d ubuntu /bin/sh -c "while true; do date; sleep 1; done" 
+
+Kontener działa w tle dlatego nie widzimy żadnych komunikatów wyjścia. Podłączmy się do kontenera w celu obserwacji strumienia danych wyjściowych.
+
+docker attach ubuntu-container
+Powinniśmy zacząć obserwować daty i czas pojawiające się na ekranie.
+
+Tue Jan 12 08:52:36 UTC 2016
+Tue Jan 12 08:52:37 UTC 2016
+Tue Jan 12 08:52:38 UTC 2016
+[...]
+
+
+Połączenie z kontenerem możemy przerwać za pomocą kombinacji Ctrl+C. Należy zauważyć, że spowoduje to zatrzymane głównego procesu kontenera. Jeżeli chcielibyśmy mieć możliwość odłączenia się od kontenera pozostawiając go działającym powinniśmy zastosować jedno z rozwiązań:
+
+Uruchomić kontener z opcją -t (--tty=true), połączyć się z kontenerem, zakończyć połączenie za pomocą kombinacji Ctrl+C. Opcja -t spowoduje, że w kontenerze zostanie zaalokowany terminal.
+
+docker run -t --name=[id lub nazwa kontenera] [nazwa obrazu]
+docker attach [id lub nazwa kontenera]
+Ctrl+C
+Uruchomić kontener z opcjami -t -i (--interactive=true), połączyć się z kontenerem, zakończyć połączenie za pomocą kombinacji Ctrl+P Ctrl+Q. Opcja -i powoduje, że w przypadku połączenia z kontenerem lokalny strumień wejścia zostanie przekierowany na strumień wejścia kontenera, a strumień wyjścia kontenera na lokalny strumień wyjścia.
+
+docker run -ti --name=[id lub nazwa kontenera] [nazwa obrazu]
+docker attach [id lub nazwa kontenera]
+Ctrl+P Ctrl+Q
+Uruchomić kontener, połączyć się z kontenerem z opcją --sig-term=false, zakończyć połączenie za pomocą kombinacji Ctrl+C. Ustawienie opcji --sig-term na false powoduje, że w wyniku wciśnięcia kombinacji Ctrl+C główny proces kontenera nie otrzymuje sygnału kończącego jego działanie.
+
+docker run --name=[id lub nazwa kontenera] [nazwa obrazu]
+docker attach --sig-term=false [id lub nazwa kontenera]
+Ctrl+C

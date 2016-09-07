@@ -1,0 +1,11 @@
+Swobodny dostęp do systemu plików działającego kontenera można uzyskać wykonując w nim polecenie tworzące nową powłokę. W celu uzyskania dostępu do strumieni wejścia i wyjścia powłoki polecenie docker exec należy wywołać z opcjami -i -t.
+
+docker exec -it [id lub nazwa kontenera] bash
+
+W wyniku powyższego polecenia znak zachęty w lokalnego terminala powinien zamienić się na znak zachęty terminala kontenera, np.:
+
+root@6b3d860feb49:/# 
+
+Jeżeli potrzebowalibyśmy kontenera tylko po to żeby wykonać jakieś operacje w jego konsoli wystarczy stworzyć go i uruchomić z opcjami -it i poleceniem bash. W przypadku obrazu ubuntu polecenie bash jest wykonywane domyślnie dlatego można je pominąć.
+
+docker run -it ubuntu
