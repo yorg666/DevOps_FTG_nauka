@@ -1,0 +1,13 @@
+docker run [nazwa lub id obrazu]
+Na początku warto poznać opcję --name, za pomocą której możemy nazwać kontener. 
+
+docker run --name="ubuntu-container" ubuntu:15:10
+Kontener będzie uruchomiony tak długo jak będzie wymagało tego działające w nim polecenie. Domyślnie kontener uruchamia polecenie określone w kodzie źródłowym obrazu. W przypadku obrazu ubuntu jest to /bin/bash. Po uruchomieniu, kontener ubuntu-container wykonał polecenie bin/bash będąc przez niezauważalnie krótki czas w stanie „up”, a następnie zakończył działanie przechodząc w stan „exited”.
+
+Kontener domyślnie uruchomi się jako proces pierwszoplanowy. Żeby uruchomić kontener w tle należy dodać opcję -d (--detach=true) do polecenia docker run.
+
+docker run -d [id lub nazwa obrazu]
+
+Czasami chcemy użyć kontenera tylko po to żeby jednokrotnie wykonać jego polecenie. W takiej sytuacji warto uruchomić kontener z opcją --rm=true, która spowoduje, że kontener zostanie automatycznie usunięty po zakończeniu działania.
+
+docker run --rm=true [id lub nazwa kontenera]

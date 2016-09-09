@@ -1,0 +1,6 @@
+
+Polecenie obrazu ubuntu to /bin/bash dlatego po uruchomieniu jego kontenera mogliśmy odnieść wrażenie, że nic się nie stało. Żeby nadpisać polecenie obrazu należy stworzyć kontener z dodatkowym parametrem.
+
+Nadpisanie polecenia obrazu
+docker run [nazwa obrazu] [polecenie]
+docker run ubuntu sleep 10

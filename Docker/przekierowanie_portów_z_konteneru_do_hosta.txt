@@ -1,0 +1,19 @@
+Połączenie kontener – system gospodarza
+Praca nad wieloma projektami wymaga korzystania z usług, które czasem realizują podobne funcjonalności, np. mysql, postgres, redis, memcache, uwsgi, gunicorn, nginx, apache. Poza tym różne projekty mogą wymagać rożnych wersji tych samych usług. Problem nagromadzenia usług oraz konfliktów ich wersji można rozwiązać korzystając z odseparowanego środowiska projektu w wirtualnej maszynie lub kontenerach Dockera.
+
+Stwórzmy dwa kontenery bazy danych postgres jeden w wersji 9.0 i drugi w wersji 9.5. W obu kontenerach postgres działa na porcie 5432. Za pomocą opcji -p przekierujemy porty 5432 kontenerów na porty 9000 i 9500 systemu gospodarza.
+
+docker run -d --name="postgres-container-9.0" -p 9000:5432 postgres:9.0
+docker run -d --name="postgres-container-9.5" -p 9500:5432 postgres:9.5
+
+Za pomocą klienta postgresa zainstalowanego w systemie gospodarza dla każdego kontenera:
+
+sprawdźmy wersje działającego w nim serwera bazy danych,
+stwórzmy jedną bazę danych,
+wyświetlmy listę dostępnych baz.
+psql -U postgres -h localhost -p 9000 -c"select version()"
+psql -U postgres -h localhost -p 9000 -c"CREATE DATABASE docker90"
+psql -U postgres -h localhost -p 9000 -c"\list"
+psql -U postgres -h localhost -p 9500 -c"select version()"
+psql -U postgres -h localhost -p 9500 -c"CREATE DATABASE docker95"
+psql -U postgres -h localhost -p 9500 -c"\list"

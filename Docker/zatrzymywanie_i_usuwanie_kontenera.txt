@@ -1,0 +1,9 @@
+Zatrzymywanie
+docker stop [id lub nazwa kontenera]
+
+Usuwanie
+docker rm [id lub nazwa kontenera]
+
+Docker nie posiada polecenia usuwającego wszystkie kontenery, ale można je uzyskać składając polecenie wyświetlające identyfikatory wszystkich kontenerów i polecenie usuwające kontener. Usunięcie wszystkich kontenerów może być szczególnie przydatne na początku nauki.
+
+docker rm $(docker ps -a -q)

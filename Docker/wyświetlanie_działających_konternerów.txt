@@ -1,0 +1,5 @@
+Listę wszystkich kontenerów można wyświetlić za pomocą polecenia:
+
+docker ps -a
+CONTAINER ID    IMAGE           COMMAND        CREATED         STATUS      PORTS    NAMES
+64d9865cea19    ubuntu:15.10    "/bin/bash"    23 hours ago    Exited (0)           ubuntu-container

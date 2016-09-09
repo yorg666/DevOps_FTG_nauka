@@ -1,0 +1,37 @@
+Podobnie jak w przypadku współdzielenia zasobów dyskowych pomiędzy systemem gospodarza i kontenerem możemy współdzielić zasoby pomiędzy kontenerami. Żeby osiągnąć ten efekt kontener udostępniający zasoby powinien określić je za pomocą opcji -v, a każdy kontener chcący z nich skorzystać powinien wskazać kontener udostępniający za pomocą opcji --volumes-from. Kontener udostępniający nie musi być uruchomiony żeby dało się korzystać z wystawionych przez niego zasobów. Jeżeli udostępniany zasób istnieje w systemie plików kontenera, który go montuje wtedy udostępniony zasób przykryje ten istniejący.
+
+docker create -v [zasób systemu plików kontenera] --name [nazwa kontenera z danymi] [nazwa obrazu]
+docker run --volumes-from [nazwa kontenera z danymi] [nazwa obrazu]
+W powyższym schemacie do stworzenia kontenera z danymi została użyta nieomawiana wcześniej komenda docker create. W wyniku jej wykonania kontener zostanie tylko stworzony bez uruchamiania jak to miejsce w przypadku komendy docker run. Alternatywnie możemy użyć komendy docker run i ustawić jej polecenie na /bin/bash. Pomiędzy kontenerami nie będzie istotnej różnicy. W pierwszym przypadku kontener będzie miał status „created”, a w drugim „exited”.
+
+Stwórzmy dwa kontenery obrazu postgres z czego jeden będzie uruchamiał serwer bazy danych, a drugi będzie służył tylko do przechowywania danych. Zacznijmy od kontenera na dane ponieważ jego udostępnione zasoby będą montowane w kontenerze uruchamiającym serwer. Dane bazy postgres są przechowywane w katalogu /var/lib/postgresql/[wersja]/main, gdzie [wersja] to np. 9.3. Lokalizację danych bazy postgres można ustalić wpisując:
+
+SHOW data_directory;
+w interaktywnym terminalu psql.
+
+docker run -v /var/lib/postgresql/9.5/main --name="postgres-data-container" postgres:9.5 /bin/bash
+Stwórzmy kontener z serwerem bazy danych, który montuje zasoby udostępnione przez kontener postgres-data-container. Żeby przetestować poprawność udostępniania katalogów pomiędzy kontenerami będziemy chcieli móc modyfikować stan bazy danych. Z tego powodu dodatkowo udostępniamy port bazy danych w systemie gospodarza.
+
+docker run -d --volumes-from="postgres-data-container" -p 9500:5432 --name="postgres-container" postgres:9.5
+Stwórzmy tabelę w bazie danych użytkownika postgres i dodajmy do niej kilka wierszy.
+
+psql -U postgres -d postgres -h localhost -p 9500 -c"CREATE TABLE docker (id serial PRIMARY KEY, name varchar(32) NOT NULL)"
+psql -U postgres -d postgres -h localhost -p 9500 -c"INSERT INTO docker VALUES (1, 'row 1'), (2, 'row 2'), (3, 'row 3')"
+psql -U postgres -d postgres -h localhost -p 9500 -c"SELECT * FROM docker"
+W wyniku powyższych poleceń na ekranie powinniśmy zobaczyć:
+
+ id | name  
+----+-------
+  1 | row 1
+  2 | row 2
+  3 | row 3
+(3 rows)
+Usuńmy kontener postgres-container i stwórzmy go ponownie w taki sam sposób jak poprzednio.
+
+docker stop postgres-container
+docker rm postgres-container
+docker run -d --volumes-from="postgres-data-container" -p 9500:5432 --name="postgres-container" postgres:9.5
+Jeżeli po ponownym wykonaniu polecenia:
+
+psql -U postgres -d postgres -h localhost -p 9500 -c"SELECT * FROM docker"
+zobaczymy trzy dodane wcześniej wiersze to znaczy, że współdzielenie zasobów systemu plików pomiędzy kontenerami zadziałało prawidłowo.

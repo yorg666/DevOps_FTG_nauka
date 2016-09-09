@@ -1,0 +1,27 @@
+Jeżeli kontener jest uruchomiony (status „up”) możemy wykonać na nim dowolne polecenie za pomocą wywołania:
+
+docker exec [id lub nazwa kontenera] [polecenie]
+
+Domyślne polecenie obrazu postgres uruchamia serwer bazy danych. Czas działania takiego kontenera będzie tożsamy z czasem działania serwera bazy danych.
+
+docker run --name="postgres-container" postgres
+Za pomocą polecenia psql -U postgres -c"\list" wyświetlmy listę baz danych dostępnych w kontenerze.
+
+docker exec postgres-container psql -U postgres -c"\list"
+
+Powinniśmy zobaczyć domyślną listę baz danych:
+
+   Name    |  Owner   | Encoding |  Collate   |   Ctype    |   Access privileges   
+-----------+----------+----------+------------+------------+-----------------------
+ postgres  | postgres | UTF8     | en_US.utf8 | en_US.utf8 | 
+ [...]
+Stwórzmy własna bazę danych o nazwie „docker”.
+
+docker exec postgres-container psql -U postgres -c"CREATE DATABASE docker"
+Po ponownym wyświetleniu baz danych powinniśmy zobaczyć listę powiększoną o bazę „docker”
+
+   Name    |  Owner   | Encoding |  Collate   |   Ctype    |   Access privileges   
+-----------+----------+----------+------------+------------+-----------------------
+ docker    | postgres | UTF8     | en_US.utf8 | en_US.utf8 | 
+ postgres  | postgres | UTF8     | en_US.utf8 | en_US.utf8 |
+ [...]
