@@ -1,0 +1,175 @@
+nowy na github dla Stefana 01.04.2014
+
+W ten sposób zrobilbym nowe repozytorium a musze stworzyc brancha
+
+I need to go to https://github.com/DUSg2
+New repository --> select private --> name wrplatform_lvinfra
+
+ct setview ekrynow_wrplatoform_lvinfra
+ct lsp | grep -v checkedout | grep -v *.keep | grep -v .*project | xargs rm –vrf  
+
+cd /home/ekrynow
+mkdir github_wrplatofrm_lvinfra
+cd github_wrplatofrm_lvinfra
+git init --bare
+
+cp -r /vobs/stn/dev/bootstrap/wr .
+
+git add -a
+git commit
+
+git push https://github.com/DUSg2/wrplatform_lvinfra
+
+
+Tworzenie brancha
+
+
+
+ct setview ekrynow_wrplatform_lvinfra
+ct lsp | grep -v checkedout | grep -v *.keep | grep -v .*project | xargs rm –vrf  
+
+cd /home/ekrynow
+mkdir github_lvinfra
+cd github_lvinfra
+
+git clone git@github.com:DUSg2/wrl-siu
+
+sprawdzam na stronie https://github.com/DUSg2/wrl-siu
+ze jest tylko branch : master
+
+cd wrl-siu
+
+git checkout -b lvinfra
+Switched to a new branch 'lvinfra'
+
+usunalem wszystko prócz .git .gitignore w katalogu 
+~/github_lvinfra/wrl-siu
+
+cp -r /vobs/stn/bootstrap/wr/* .
+
+git add -A
+
+eselivm2v441l:ekrynow - [ekrynow_wrplatform_lvinfra]  ~/github_lvinfra/wrl-siu
+->git status
+# On branch lvinfra
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	modified:   layers/README
+#	modified:   layers/fs-final/templates/feature/siu_rootfs/fs_final.sh
+#	modified:   layers/meta-eri-siu02/recipes-kernel/linux/linux-windriver/eri-iptables.cfg
+#	modified:   layers/meta-eri-siu02/recipes-kernel/linux/linux-windriver/eri-siu02-full.cfg
+#	modified:   layers/meta-eri-siu02/recipes-kernel/linux/linux-windriver/eri-siu02-standard.scc
+#	modified:   layers/meta-siu/recipes-core/busybox/busybox_1.19.4.bbappend
+#	deleted:    layers/meta-siu/recipes-extended/syslog-ng/syslog-ng-3.4.2/stn-ms-timestamps.patch
+#	deleted:    layers/meta-siu/recipes-extended/syslog-ng/syslog-ng-3.4.2/syslog-ng-1.6.7-logrotate.patch
+#	deleted:    layers/meta-siu/recipes-extended/syslog-ng/syslog-ng-3.4.2/syslog-ng-exec-location.patch
+#	deleted:    layers/meta-siu/recipes-extended/syslog-ng/syslog-ng-3.4.2/syslog-ng.logrotate
+#	deleted:    layers/meta-siu/recipes-extended/syslog-ng/syslog-ng-3.4.2/syslog-ng.sysconfig
+#	deleted:    layers/meta-siu/recipes-extended/syslog-ng/syslog-ng-3.4.2/syslog.log
+#	deleted:    layers/meta-siu/recipes-extended/syslog-ng/syslog-ng_3.4.2.bbappend
+#	renamed:    layers/meta-siu/recipes-siu/tasks/files/usr/share/snmp/mibs/ERICSSON-SN-MIB.txt -> layers/meta-siu/recipes-networking/net-snmp/files/ERICSSON-SN-MIB.txt
+#	renamed:    layers/meta-siu/recipes-siu/tasks/files/usr/share/snmp/mibs/ERICSSON-TOP-MIB.txt -> layers/meta-siu/recipes-networking/net-snmp/files/ERICSSON-TOP-MIB.txt
+#	modified:   layers/meta-siu/recipes-networking/net-snmp/net-snmp_5.7.2.bbappend
+#	deleted:    layers/meta-siu/recipes-networking/strongswan/files/strongswan-5.0.2.tar.gz
+#	deleted:    layers/meta-siu/recipes-networking/strongswan/strongswan_5.0.2.bb
+#	deleted:    layers/meta-siu/recipes-siu/tasks/files/etc/init.d/rcS
+#	deleted:    layers/meta-siu/recipes-siu/tasks/files/etc/pam.d/login
+#	deleted:    layers/meta-siu/recipes-siu/tasks/files/etc/pam.d/sshd
+#	modified:   layers/meta-siu/recipes-siu/tasks/task-siu.bb
+#
+
+eselivm2v441l:ekrynow - [ekrynow_wrplatform_lvinfra]  ~/github_lvinfra/wrl-siu
+->git commit
+
+[lvinfra 509388e] initial push to new branch lvinfra
+ 22 files changed, 256 insertions(+), 357 deletions(-)
+ delete mode 100644 layers/meta-siu/recipes-extended/syslog-ng/syslog-ng-3.4.2/stn-ms-timestamps.patch
+ delete mode 100644 layers/meta-siu/recipes-extended/syslog-ng/syslog-ng-3.4.2/syslog-ng-1.6.7-logrotate.patch
+ delete mode 100644 layers/meta-siu/recipes-extended/syslog-ng/syslog-ng-3.4.2/syslog-ng-exec-location.patch
+ delete mode 100644 layers/meta-siu/recipes-extended/syslog-ng/syslog-ng-3.4.2/syslog-ng.logrotate
+ delete mode 100644 layers/meta-siu/recipes-extended/syslog-ng/syslog-ng-3.4.2/syslog-ng.sysconfig
+ delete mode 100644 layers/meta-siu/recipes-extended/syslog-ng/syslog-ng-3.4.2/syslog.log
+ delete mode 100644 layers/meta-siu/recipes-extended/syslog-ng/syslog-ng_3.4.2.bbappend
+ rename layers/meta-siu/{recipes-siu/tasks/files/usr/share/snmp/mibs => recipes-networking/net-snmp/files}/ERICSSON-SN-MIB.txt (100%)
+ rename layers/meta-siu/{recipes-siu/tasks/files/usr/share/snmp/mibs => recipes-networking/net-snmp/files}/ERICSSON-TOP-MIB.txt (100%)
+ delete mode 100644 layers/meta-siu/recipes-networking/strongswan/files/strongswan-5.0.2.tar.gz
+ delete mode 100644 layers/meta-siu/recipes-networking/strongswan/strongswan_5.0.2.bb
+ delete mode 100755 layers/meta-siu/recipes-siu/tasks/files/etc/init.d/rcS
+ delete mode 100644 layers/meta-siu/recipes-siu/tasks/files/etc/pam.d/login
+ delete mode 100644 layers/meta-siu/recipes-siu/tasks/files/etc/pam.d/sshd
+
+
+git push origin lvinfra
+Counting objects: 81, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (27/27), done.
+Writing objects: 100% (28/28), 5.15 KiB | 0 bytes/s, done.
+Total 28 (delta 18), reused 0 (delta 0)
+To git@github.com:DUSg2/wrl-siu
+ * [new branch]      lvinfra -> lvinfra
+
+ ####### 04.04.2014 #######################################################################################################################################
+ 
+ musze jeszcze wrzucic commita 
+ https://github.com/DUSg2/wrl-siu/commit/74a9edb270afaeef6199c230a89c148f2288e088
+ 
+cd ~/github_lvinfra
+git clone  git@github.com:DUSg2/wrl-siu
+mv wrl-siu wrl-siu_master
+git clone  git@github.com:DUSg2/wrl-siu -b lvinfra
+mv wrl-siu wrl-siu_lvinfra
+
+ eselivm2v441l:ekrynow   ~/github_lvinfra
+->ll
+total 8
+drwxrwxr-x 6 ekrynow rthcc 4096 2014-04-04 11:03 wrl-siu_lvinfra
+drwxrwxr-x 6 ekrynow rthcc 4096 2014-04-04 11:02 wrl-siu_master
+
+eselivm2v441l:ekrynow   ~/github_lvinfra
+->cp wrl-siu_master/layers/README wrl-siu_lvinfra/layers/
+
+eselivm2v441l:ekrynow   ~/github_lvinfra
+->diff -Naur wrl-siu_master/layers/README  wrl-siu_lvinfra/layers/README 
+
+
+eselivm2v441l:ekrynow   ~/github_lvinfra/wrl-siu_lvinfra
+->git status
+# On branch lvinfra
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   layers/README
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+
+eselivm2v441l:ekrynow   ~/github_lvinfra/wrl-siu_lvinfra
+->git add layers/README
+
+eselivm2v441l:ekrynow   ~/github_lvinfra/wrl-siu_lvinfra
+->git status
+# On branch lvinfra
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	modified:   layers/README
+#
+
+eselivm2v441l:ekrynow   ~/github_lvinfra/wrl-siu_lvinfra
+->git commit
+[lvinfra 4898fa8] Lihor Florin commit 74a9edb270afaeef6199c230a89c148f2288e088
+ 1 file changed, 5 insertions(+), 2 deletions(-)
+
+eselivm2v441l:ekrynow   ~/github_lvinfra/wrl-siu_lvinfra
+->git push origin lvinfra
+Counting objects: 9, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 429 bytes | 0 bytes/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+To git@github.com:DUSg2/wrl-siu
+   509388e..4898fa8  lvinfra -> lvinfra
+
+   
+ commit dodany :)

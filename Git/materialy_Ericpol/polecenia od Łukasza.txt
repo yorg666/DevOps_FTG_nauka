@@ -1,0 +1,23 @@
+https://gerrit.ericsson.se/
+https://eforge.ericsson.se/sf/scm/do/listRepositories/projects.dev_support_rt/scm
+
+https://gerrit.ericsson.se/plugins/gitblit/summary/hsl*obx
+
+Schematy:
+
+1)	Bez review (tylko rt/tools)
+
+git add -A
+git commit -s
+git rebase -i origin/master
+git push origin
+
+2)	Review
+
+git add -A
+git commit -s
+git rebase -i origin/master
+git review -f –v
+
+Logika operacji i przykładowa implementacja: git_automatic_repository.sh w /proj/siu_evolution/tools/git
+

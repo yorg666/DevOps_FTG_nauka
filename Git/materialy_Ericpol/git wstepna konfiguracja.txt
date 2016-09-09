@@ -1,0 +1,13 @@
+git config --list
+git config -l
+
+git config --global user.name "Krystian Nowaczyk"
+git config --global user.email "krystian.nowaczyk@ericsson.com"
+
+git config  user.name "Krystian Nowaczyk"
+git config  user.email "krystian.nowaczyk@ericsson.com"
+
+git clone ssh://EKRYNOW@gerritforge.lmera.ericsson.se:29418/pdurtdevsupport
+
+
+git clone ssh://EKRYNOW@gerritforge.lmera.ericsson.se:29418/pdu-rt-training

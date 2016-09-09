@@ -1,0 +1,2 @@
+.gitreview
+ten plik musi byc uzupelniony danymi umozliwiajacymi polaczenie do gerrita. 

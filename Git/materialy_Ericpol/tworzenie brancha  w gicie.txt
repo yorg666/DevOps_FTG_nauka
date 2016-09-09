@@ -1,0 +1,21 @@
+
+task michala Wisniewskiego , to info wyslal 10.02.2014
+
+Panowie, krótka dawka informacji podzielona na 2 maile.
+Praca z Git (na przykladzie hsl repo):
+
+Tworzycie sobie katalog np. w /home/<signum>/<nazwa> i w nim puszczacie: 
+git clone ssh://$USER@gerrit.ericsson.se:29418/hsl/hsl
+
+jesli chcecie skopiowac zawartosc konkretnego branch’a dodajecie  -b branch_name:
+git clone ssh://$USER@gerrit.ericsson.se:29418/hsl/hsl -b branch_name
+
+Jesli chcecie stworzyc nowego branch’a, najpierw tworzycie go lokalnie:
+git checkout -b your_branch
+
+a pózniej wysylacie na serwer:
+git push ssh://$USER@gerrit.ericsson.se:29418/hsl/hsl  <branch-name> lub git push ssh://$USER@gerrit.ericsson.se:29418/hsl/hsl <local-branch-name>:<remote-branch-name>
+Jezeli cos poszlo nie tak, mozecie usunac branch z serwera:
+git push ssh://$USER@gerrit.ericsson.se:29418/hsl/hsl --delete <branch_name>
+
+Reszta info na temat git’a: https://rtdev.lmera.ericsson.se/wiki/Git_Gerrit_Workflow

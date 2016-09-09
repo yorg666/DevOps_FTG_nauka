@@ -1,0 +1,280 @@
+https://rtdev.lmera.ericsson.se/wiki/Git_Gerrit_Workflow
+
+Instrukcje i output (workflow rt/tools):
+
+----------------------------------------------------------------------
+
+git clone ssh://gerrit.ericsson.se:29418/rt/tools
+
+ERICSSON eselivm2v283l : elukmin  (master) ~/tools
+-> ls -l
+total 16
+drwxrwxr-x 2 elukmin rthcc 4096 Aug  9 10:59 clearcase
+drwxrwxr-x 2 elukmin rthcc 4096 Aug  9 10:59 codereview
+drwxrwxr-x 2 elukmin rthcc 4096 Aug  9 10:59 google
+drwxrwxr-x 2 elukmin rthcc 4096 Aug  9 10:59 siu_tcu
+ERICSSON eselivm2v283l : elukmin  (master) ~/tools
+-> ls -latr
+total 36
+drwxrwxr-x  2 elukmin rthcc 4096 Aug  9 10:59 clearcase
+drwxrwxr-x  2 elukmin rthcc 4096 Aug  9 10:59 codereview
+drwxrwxr-x  2 elukmin rthcc 4096 Aug  9 10:59 google
+drwxrwxr-x  2 elukmin rthcc 4096 Aug  9 10:59 siu_tcu
+drwxrwxr-x  8 elukmin rthcc 4096 Aug  9 11:30 .git
+-rw-rw-r--  1 elukmin rthcc  109 Aug  9 11:55 .gitreview
+drwx-----x 50 elukmin users 8192 Aug  9 11:55 ..
+drwxrwxr-x  7 elukmin rthcc 4096 Aug  9 11:55 .
+ERICSSON eselivm2v283l : elukmin  (master) ~/tools
+-> git add .gitreview
+ERICSSON eselivm2v283l : elukmin  (master) ~/tools
+-> git commit -s
+Aborting commit due to empty commit message.
+ERICSSON eselivm2v283l : elukmin  (master) ~/tools
+-> git commit -s
+[master c4fe411] Signed-off-by: Lukasz Minkowski <lukasz.minkowski@ericsson.com>
+1 file changed, 8 insertions(+)
+create mode 100644 .gitreview
+ERICSSON eselivm2v283l : elukmin  (master) ~/tools
+-> git rebase -i origin/master
+[detached HEAD 3c0c257] Signed-off-by: Lukasz Minkowski <lukasz.minkowski@ericsson.com>
+10 files changed, 4531 insertions(+)
+create mode 100644 .gitreview
+create mode 100755 clearcase/ctdiffact.pl
+create mode 100755 clearcase/mkstream.sh
+create mode 100755 clearcase/mktk.sh
+create mode 100755 codereview/codereview.pl
+create mode 100755 codereview/codereview_diff.pl
+create mode 100755 google/cpplint.py
+create mode 100755 siu_tcu/decodeDCG.pl
+create mode 100755 siu_tcu/rebuild_siu02_tar_file.sh
+create mode 100755 siu_tcu/rebuild_tcu02_tar_file.sh
+Successfully rebased and updated refs/heads/master.
+ERICSSON eselivm2v283l : elukmin  (master) ~/tools
+-> git review -f
+Your change was committed before the commit hook was installed
+Amending the commit to add a gerrit change id
+remote: Resolving deltas: 100% (3/3)
+remote: Processing changes: new: 1, refs: 1, done    
+remote: 
+remote: New Changes:
+remote:   https://gerrit.ericsson.se/90956
+remote: 
+To ssh://gerrit.ericsson.se:29418/rt/tools
+* [new branch]      HEAD -> refs/publish/master/master
+Switched to branch 'master'
+error: Cannot delete the branch 'master' which you are currently on.
+ERICSSON eselivm2v283l : elukmin  (master) ~/tools
+-> git status
+# On branch master
+# Your branch is ahead of 'origin/master' by 1 commit.
+#   (use "git push" to publish your local commits)
+#
+nothing to commit, working directory clean
+ERICSSON eselivm2v283l : elukmin  (master) ~/tools
+->
+
+----------------------------------------------------------------------
+
+Standardowy problem:
+
+PROBLEM:
+
+ERICSSON eselivm2v283l : elukmin  (master) ~/tools
+-> git review -f -v
+2013-08-09 11:38:09.591054 Running: git log --color=never --oneline HEAD^1..HEAD
+2013-08-09 11:38:09.613177 Running: git remote
+No '.gitreview' file found in this repository.
+We don't know where your gerrit is. Please manually create 
+a remote named gerrit and try again.
+
+ROZWIAZANIE:
+
+ERICSSON eselivm2v283l : elukmin  (master) ~/tools
+-> touch .gitreview
+ERICSSON eselivm2v283l : elukmin  (master) ~/tools
+-> vi .gitreview 
+ERICSSON eselivm2v283l : elukmin  (master) ~/tools
+-> cat .gitreview
+[gerrit]
+host=gerrit.ericsson.se
+port=29418
+project=rt/tools.git
+defaultbranch=master
+defaultremote=origin
+
+----------------------------------------------------------------------
+
+Instrukcje i output (workflow standardowy):
+
+ERICSSON eselivm2v283l : elukmin  (elukmin) ~/git_repositories/obx
+-> echo aaaaaaaaaaaaasssssssssssssdddddddddddd >> testscript.sh
+ERICSSON eselivm2v283l : elukmin  (elukmin) ~/git_repositories/obx
+-> git status
+# On branch elukmin
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#             modified:   testscript.sh
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+ERICSSON eselivm2v283l : elukmin  (elukmin) ~/git_repositories/obx
+-> git add -A
+ERICSSON eselivm2v283l : elukmin  (elukmin) ~/git_repositories/obx
+-> git status
+# On branch elukmin
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#             modified:   testscript.sh
+#
+ERICSSON eselivm2v283l : elukmin  (elukmin) ~/git_repositories/obx
+-> git commit -s
+[elukmin b73013c] Checking something
+1 file changed, 1 insertion(+)
+ERICSSON eselivm2v283l : elukmin  (elukmin) ~/git_repositories/obx
+-> git rebase -i origin/master
+Successfully rebased and updated refs/heads/elukmin.
+ERICSSON eselivm2v283l : elukmin  (elukmin) ~/git_repositories/obx
+-> git review -f
+Your change was committed before the commit hook was installed
+Amending the commit to add a gerrit change id
+remote: Resolving deltas: 100% (2/2)
+remote: Processing changes: new: 1, refs: 1, done    
+remote: 
+remote: New Changes:
+remote:   https://gerrit.ericsson.se/96131
+remote: 
+To ssh://elukmin@gerrit.ericsson.se:29418/hsl/obx
+* [new branch]      HEAD -> refs/publish/master/elukmin
+Switched to branch 'master'
+Deleted branch 'elukmin'
+ERICSSON eselivm2v283l : elukmin  (master) ~/git_repositories/obx
+-> git pull
+remote: Counting objects: 50, done
+remote: Finding sources: 100% (3/3)
+remote: Total 3 (delta 2), reused 2 (delta 2)
+Unpacking objects: 100% (3/3), done.
+From ssh://gerrit.ericsson.se:29418/hsl/obx
+   4d376df..a305252  master     -> origin/master
+Updating 4d376df..a305252
+Fast-forward
+testscript.sh | 1 +
+1 file changed, 1 insertion(+)
+ERICSSON eselivm2v283l : elukmin  (master) ~/git_repositories/obx
+-> git status
+# On branch master
+nothing to commit, working directory clean
+
+----------------------------------------------------------------------
+
+Problem z review:
+
+ERICSSON eselivm2v283l : elukmin  (master) ~/git_repositories/obx
+-> git status
+# On branch master
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#             modified:   testscript.sh
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+ERICSSON eselivm2v283l : elukmin  (master) ~/git_repositories/obx
+-> git add -A
+ERICSSON eselivm2v283l : elukmin  (master) ~/git_repositories/obx
+-> git commit -s
+[master e779e60] Signed-off-by: Lukasz Minkowski <lukasz.minkowski@ericsson.com>
+1 file changed, 1 insertion(+)
+ERICSSON eselivm2v283l : elukmin  (master) ~/git_repositories/obx
+-> git rebase -i origin/master
+Successfully rebased and updated refs/heads/master.
+ERICSSON eselivm2v283l : elukmin  (master) ~/git_repositories/obx
+-> git review -f -v
+2013-08-27 11:35:16.355677 Running: git log --color=never --oneline HEAD^1..HEAD
+2013-08-27 11:35:16.380728 Running: git remote
+2013-08-27 11:35:16.391905 Running: git branch -a --color=never
+2013-08-27 11:35:16.406761 Running: git branch --color=never
+2013-08-27 11:35:16.426641 Running: git log HEAD^1..HEAD
+Found topic 'master' from parsing changes.
+2013-08-27 11:35:16.447902 Running: git rev-parse --git-dir
+2013-08-27 11:35:16.457561 Running: git remote update origin
+Fetching origin
+From ssh://gerrit.ericsson.se:29418/hsl/obx
+   8da8582..4f14b8c  master     -> origin/master
+2013-08-27 11:35:18.537175 Running: git rebase -i remotes/origin/master
+Errors running git rebase -i remotes/origin/master
+error: could not apply e779e60... Signed-off-by: Lukasz Minkowski <lukasz.minkowski@ericsson.com>
+
+When you have resolved this problem, run "git rebase --continue".
+If you prefer to skip this patch, run "git rebase --skip" instead.
+To check out the original branch and stop rebasing, run "git rebase --abort".
+Could not apply e779e60... Signed-off-by: Lukasz Minkowski <lukasz.minkowski@ericsson.com>
+ERICSSON eselivm2v283l : elukmin  ((no branch)) ~/git_repositories/obx
+-> git rebase --continue
+testscript.sh: needs merge
+You must edit all merge conflicts and then
+mark them as resolved using git add
+ERICSSON eselivm2v283l : elukmin  ((no branch)) ~/git_repositories/obx
+-> git add testscript.sh
+ERICSSON eselivm2v283l : elukmin  ((no branch)) ~/git_repositories/obx
+-> git status
+# Not currently on any branch.
+# You are currently rebasing.
+#   (all conflicts fixed: run "git rebase --continue")
+#
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#             modified:   testscript.sh
+#
+ERICSSON eselivm2v283l : elukmin  ((no branch)) ~/git_repositories/obx
+-> git rebase -i origin/master
+
+It seems that there is already a rebase-merge directory, and
+I wonder if you are in the middle of another rebase.  If that is the
+case, please try
+                git rebase (--continue | --abort | --skip)
+If that is not the case, please
+                rm -fr "/home/elukmin/git_repositories/obx/.git/rebase-merge"
+and run me again.  I am stopping in case you still have something
+valuable there.
+ERICSSON eselivm2v283l : elukmin  ((no branch)) ~/git_repositories/obx
+-> git rebase --continue
+[detached HEAD fee3a60] Signed-off-by: Lukasz Minkowski <lukasz.minkowski@ericsson.com>
+1 file changed, 3 insertions(+)
+Successfully rebased and updated refs/heads/master.
+ERICSSON eselivm2v283l : elukmin  (master) ~/git_repositories/obx
+-> git review -f -v
+2013-08-27 11:36:52.817773 Running: git log --color=never --oneline HEAD^1..HEAD
+2013-08-27 11:36:52.845059 Running: git remote
+2013-08-27 11:36:52.860321 Running: git branch -a --color=never
+2013-08-27 11:36:52.879850 Running: git branch --color=never
+2013-08-27 11:36:52.901117 Running: git log HEAD^1..HEAD
+Found topic 'master' from parsing changes.
+2013-08-27 11:36:52.927053 Running: git rev-parse --git-dir
+2013-08-27 11:36:52.941692 Running: git remote update origin
+Fetching origin
+2013-08-27 11:36:54.507243 Running: git rebase -i remotes/origin/master
+2013-08-27 11:36:55.151129 Running: git reset --hard ORIG_HEAD
+2013-08-27 11:36:55.190913 Running: git remote update origin
+Fetching origin
+2013-08-27 11:36:56.753767 Running: git config --get color.ui
+2013-08-27 11:36:56.766659 Running: git log --color=auto --decorate --oneline master --not remotes/origin/master
+2013-08-27 11:36:56.791785 Running: git push origin HEAD:refs/publish/master/master
+remote: Resolving deltas: 100% (2/2)
+remote: Processing changes: new: 1, refs: 1, done    
+remote: 
+remote: New Changes:
+remote:   https://gerrit.ericsson.se/96028
+remote: 
+To ssh://elukmin@gerrit.ericsson.se:29418/hsl/obx
+* [new branch]      HEAD -> refs/publish/master/master
+Switching back to master and deleting master
+2013-08-27 11:36:58.770776 Running: git checkout master
+Switched to branch 'master'
+2013-08-27 11:36:58.838278 Running: git branch -D master
+error: Cannot delete the branch 'master' which you are currently on.
+ERICSSON eselivm2v283l : elukmin  (master) ~/git_repositories/obx
+->
+

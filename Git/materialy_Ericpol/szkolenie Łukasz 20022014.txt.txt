@@ -1,0 +1,67 @@
+Agenda + cwiczenia:
+
+NAME: eric-dev-szkolenie1-ldt1 (git1)
+IP: 172.19.43.21
+IP PRIV: 192.168.0.1
+ROLE: client
+USERS: user1/2/3, password bomb | root, password thai0lai
+
+NAME: eric-dev-szkolenie2-ldt1 (git2)
+IP: 172.19.43.57
+IP PRIV: 192.168.0.2
+ROLE: server git
+USERS: root, password thai0lai
+
+1) Git basic workflow
+- zalozenia: skrypt automatyczny do obslugi repozytorium git
+- jak rozwiazac ten problem? Co jest podstawa do obslugi repozytorium?
+- propozycja: odpowiednia kolejnosc komend i badanie output - uzycie wzorców
+
+Co jest podstawa do tego aby zaciagnac zmiany?
+Co jest podstawa do tego aby zrobic push?
+
+Flow powinien miec forme opisowa w jezyku naturalnym.
+
+2) Porównanie powyzszego workflow z logika ClearCase
+
+Flow powinien miec forme opisowa w jezyku naturalnym.
+
+3) Repozytorium testowe - wprowadzenie zmian konfiguracyjnych
+
+git clone git@172.19.43.57:/git_repository/git_introduction.git
+
+Zmiany: uzycie HTTP + wdrozenie .gitignore z testami
+
+4) Operacje zwiazane z git - repozytorium testowe + sandbox (hsl/obx)
+- utworzenie nowego branch (remote), uzycie non-default nazwy katalogu
+- trywialny i nietrywialny merge na plikach
+- git fetch/git merge i porównanie z git pull
+- utworzenie tag, przypisanie do testowego commit - sprawdzenie dokumentacji
+- git push z opcja f jako revert
+- git review, pick i squash w formie porównania
+- git review i problemy z merge (hsl/obx)
+
+Do zrealizowania na workshop:
+- setup srodowiska (30 minut)
+- git review, pick i squash w formie porównania (20 minut)
+- trywialny i nietrywialny merge na plikach (20 minut)
+- git fetch/git merge i porównanie z git pull (10 minut)
+- git push z opcja f jako revert (25 minut)
+
+Instrukcja instalacji:
+
+https://github.com/git/git
+Download ZIP
+scp...
+unzip git-master.zip
+cd git-master
+apt-get install make
+apt-get install g++
+make prefix=/usr/local all
+
+Prezentacja (web):
+
+http://prezi.com/1h9fuywft-lr/git-vcs-introduction/
+
+Prezentacja (pdf) – w zalaczniku
+Prezentacja (pp) – przygotowanie w toku

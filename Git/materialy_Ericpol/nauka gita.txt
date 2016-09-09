@@ -1,0 +1,7 @@
+katalog /home/ekrynow/git
+git clone ssh://EKRYNOW@gerritforge.lmera.ericsson.se:29418/pdurtdevsupport
+git clone ssh://ekrynow@gerrit.ericsson.se:29418/tn/sandbox
+git clone ssh://EKRYNOW@gerritforge.lmera.ericsson.se:29418/pdu-rt-training
+git clone ssh://`(whoami)`@gerrit.ericsson.se:29418/hsl/obx
+
+
