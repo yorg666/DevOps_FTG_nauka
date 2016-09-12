@@ -1,0 +1,9 @@
+Finished features may be merged into the develop branch definitely add them to the upcoming release:
+$ git checkout develop
+Switched to branch 'develop'
+$ git merge --no-ff feature/myfeature
+Updating ea1b82a..05e9557
+(Summary of changes)
+$ git branch -d feature/myfeature
+Deleted branch feature/myfeature (was 05e9557).
+$ git push origin develop

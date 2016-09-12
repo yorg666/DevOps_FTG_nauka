@@ -1,0 +1,2 @@
+$ git checkout -b feature/myfeature develop
+Switched to a new branch "feature/myfeature"
