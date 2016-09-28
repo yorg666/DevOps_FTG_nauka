@@ -1,0 +1,5 @@
+róznica miedzy fork a clone
+stash-git
+git-flow https://datasift.github.io/gitflow/IntroducingGitFlow.html
+pre-commit hook
+post-commit hook
