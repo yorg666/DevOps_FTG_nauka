@@ -1,0 +1,4 @@
+git pull  = git fetch + git merge
+
+git fetch sciąga zmiany z remote repozytorium ale nie integruje ich z lokalnymi plikami tylko przechowuje w katalogu ./git/refs/remotes
+git merge scala lokalne pliki z tym co przyszło ze zdalnego repozytorium.

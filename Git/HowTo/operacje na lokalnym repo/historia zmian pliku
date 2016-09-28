@@ -1,0 +1,9 @@
+jeżeli chce sprawdzić w których commitach jak i przez kogo został modyfikowany plik robię to poleceniem
+git blame 548e8024bb5aad1986b2d4cbe8c7579dfff9fa82
+git blame -L 1,4 548e8024bb5aad1986b2d4cbe8c7579dfff9fa82 -- -L 1,4 określa które linie w pliku mam sprawdzać, bo nie muszę robić tego na całym
+
+git blame -C -L 1,4 548e8024bb5aad1986b2d4cbe8c7579dfff9fa82  -- opcja -C dodatkowo sprawdzam czy wyszukwiane linie nei pochodziły wcześniej z plików o innej nazwie
+
+lub
+git log -- [filename]
+
