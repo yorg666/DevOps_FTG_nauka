@@ -1,0 +1,2 @@
+jeżeli chcę na stałe usunąć jakiś plik z możliwości dodania go do stash, dodaję go do .gitignore
+echo filename >> .gitingore

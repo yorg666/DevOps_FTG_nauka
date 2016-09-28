@@ -1,0 +1,11 @@
+modyfikacja ostatniego commita lokalnego przez pushem do zdalnego repo to polecenie git commit --amend
+
+
+touch plik1 plik2
+git add plik1
+
+git commit -m "dodanie plik1 i plik2"
+git add plik2
+
+git commit --amend   --to polecenie usunei poprzedni commit a w jego miejsce wstawi nowy z oboma plikami.
+
