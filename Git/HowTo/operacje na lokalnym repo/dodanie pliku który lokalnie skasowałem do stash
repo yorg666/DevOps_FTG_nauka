@@ -1,0 +1,21 @@
+polecenie to git add -u
+
+yorg@yorg-desktop ~/DevOps_FTG_nauka/Git $ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	zmodyfikowany:    HowTo/operacje na lokalnym repo/historia zmian pliku
+	new file:         HowTo/operacje na lokalnym repo/przywracanie pliku do wersji z innego commita
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	deleted:          testowy_plik
+
+
+git add -u
+

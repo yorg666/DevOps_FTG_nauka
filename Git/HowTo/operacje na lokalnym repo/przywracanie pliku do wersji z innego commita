@@ -1,0 +1,20 @@
+
+Git log pokazuje mi jak się zmieniała zawartość pliku na przestrzeni commitów
+
+yorg@yorg-desktop ~/DevOps_FTG_nauka/Git $ git log -- testowy_plik
+
+commit c70222c2a6f93d783e73ed08a9df5c4ab5b197a8
+Author: Yorg666 <Yorg666@dom.hell>
+Date:   Wed Sep 28 19:24:51 2016 +0200
+
+    2
+
+commit 5a384ce80638b4ee86d322098444a0d4a5e4498e
+Author: Yorg666 <Yorg666@dom.hell>
+Date:   Wed Sep 28 19:24:21 2016 +0200
+
+    1
+
+polecenie git checkout id_commita nazwa_pliku - zmieni mi lokalną wersję pliku na tą z danego commita
+yorg@yorg-desktop ~/DevOps_FTG_nauka/Git $ git checkout 5a384ce80638b4ee86d322098444a0d4a5e4498e testowy_plik
+
