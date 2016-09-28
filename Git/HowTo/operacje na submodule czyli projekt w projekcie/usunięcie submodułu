@@ -1,0 +1,7 @@
+Remove a git submodule
+Creating a submodule is pretty straight-forward, but deleting them less so the commands you need are:
+
+git submodule deinit submodulename   
+git rm submodulename
+git rm --cached submodulename
+rm -rf .git/modules/submodulename
