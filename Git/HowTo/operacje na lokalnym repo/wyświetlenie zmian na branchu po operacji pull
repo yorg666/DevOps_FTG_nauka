@@ -1,0 +1,3 @@
+wyświetla szczegóły zmian po git pull
+git diff master master@{1}
+

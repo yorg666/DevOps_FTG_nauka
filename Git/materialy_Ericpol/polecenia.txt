@@ -1,2 +1,0 @@
-git diff master master@{1} -wyświetla szczegóły zmian po git pull
-
