@@ -1,0 +1,18 @@
+https://bitbucket.org/account/signup/
+
+email: krispraca@o2.pl
+login: yorg666
+haslo: 234ds!@#$!sasd
+
+dostaje maila z potwierdzeniem
+username yorg666
+
+BitBucket jest usluga Atlassiana alternatywna dla GitHuba.
+Czyli jest to usluga chmurowa gdzie mozemy trzymac nasze wersjonowane pliki.
+
+repozytoria dziela sie na publiczne i prywatne.
+Dostep od publicznych repozytoriow nie wymaga zalozonego konta
+
+A code project can consist of multiple repositories across multiple accounts but can also be a single repository from a single account.
+
+Each repository has a 2 GB size limit, but we recommend keeping your repository no larger than 1 GB.
