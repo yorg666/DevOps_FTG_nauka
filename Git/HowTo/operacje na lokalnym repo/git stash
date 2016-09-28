@@ -1,0 +1,55 @@
+Mam dwa brache 
+
+yorg@yorg-desktop ~/DevOps_FTG_nauka $ git branch 
+  development
+* master
+
+jeżeli na jednym z nich wykonam jakieś zmiany i dodam je do stage ale jeszcze nie skomituje To po zmianie brancha
+git checkout development
+
+nadal będę widział te pliki, bo stage area jest wspólna dla wszystkich branchy
+
+dlatego dodaję zawartość stage do stash
+
+yorg@yorg-desktop ~/DevOps_FTG_nauka $ git stash
+Saved working directory and index state WIP on development: 782b0b4 git hooks
+HEAD is now at 782b0b4 git hooks
+
+i teraz stage jest czysty
+
+yorg@yorg-desktop ~/DevOps_FTG_nauka $ git status
+On branch development
+nothing to commit, working directory clean
+
+wyświetlam zawartość stash
+
+yorg@yorg-desktop ~/DevOps_FTG_nauka $ git stash show
+ przydatnosc_git_stash | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+w każdej chwili mogę przywrócić pliki ze stash do stage
+
+git stash apply --index stash@{0}   gdzie stash@{0} oznacza numer commita ze stash
+
+yorg@yorg-desktop ~/DevOps_FTG_nauka $ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:         przydatnosc_git_stash
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	Git/HowTo/operacje na lokalnym repo/git stash
+
+
+po nałożeniu commita ze stash ten pozostaje w stash, dlatego należy go ręcznie usunąć
+yorg@yorg-desktop ~/DevOps_FTG_nauka $ git stash drop stash@{0} 
+Dropped stash@{0} (6615cca42620b4729ebd2175a7771ece819a3fb
+
+zmiany w stash mogą być integrowane na różnych branchach, nie tylko na tym na którym zostały zapisane.
+
+  
