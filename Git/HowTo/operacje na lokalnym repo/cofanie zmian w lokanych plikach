@@ -1,0 +1,4 @@
+jeżeli pogrzebę coś w lokalnych plikach to mogę cofnąć je do wersji z commita 
+
+git checkout -- Gemfile  # reset specified path
+git checkout -- lib bin  # also works with multiple arguments  

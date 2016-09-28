@@ -1,0 +1,37 @@
+modyfikację dowolnej ilości commitów lokalnych przed pushem robię poleceniem git rebase -i HEAD~3  gdzie HEAD~3 oznacza na ilu commitch od HEAD chce pracować
+
+
+yorg@yorg-desktop ~/DevOps_FTG_nauka/Git $ git log --pretty=oneline
+
+0a56b14b47a20a6d84f075bbc066e5dbe2cd0773 tutorial Gita
+743f311b9592e825b52d449c5f3550d5b88ad707 interaktywny tutorial gita
+a03e171e3b9d544c5304f403b720fe2bd6fb7d2f porządki w katalogu Gicia
+
+chce zmienic opis commita "porządki w katalogu Gicia"
+
+git rebase -i HEAD~3 
+
+wyskoczy mi edytor w którym za pomocą liter oznaczam co chce żeby było zrobione
+np mogę połączyć wiele commitów w jeden oznaczając commity sqush, zostaną one wtedy złączone z commitem pick który jest nad nimi.
+
+pick 1fc6c95 Patch A
+s 6b2481b Patch B
+s dd1475d something I want to split
+pick c619268 A fix for Patch B
+pick fa39187 something to add to patch A
+pick 4ca2acc i cant' typ goods
+pick 7b36971 something to move before patch B
+
+# Rebase 41a72e6..7b36971 onto 41a72e6
+#
+# Commands:
+#  p, pick = use commit
+#  r, reword = use commit, but edit the commit message
+#  e, edit = use commit, but stop for amending
+#  s, squash = use commit, but meld into previous commit
+#  f, fixup = like "squash", but discard this commit's log message
+#  x, exec = run command (the rest of the line) using shell
+#
+# If you remove a line here THAT COMMIT WILL BE LOST.
+# However, if you remove everything, the rebase will be aborted.
+

@@ -1,0 +1,8 @@
+anulowanie rebase który jest w trakcie git rebase --abort
+
+yorg@yorg-desktop ~/DevOps_FTG_nauka/Git $ git status
+rebase in progress; onto 0a56b14
+
+git rebase --abort
+
+

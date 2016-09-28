@@ -1,0 +1,43 @@
+cofnięcie commita z lokalnego repo to polecenie
+git reset HEAD~1   --zachowa zmiany lokalnie, plik dupa jest nadal widoczny
+git reset --hard HEAD~1 - usunie commita i zmiany lokalne, plik dupa zostanie usunięty
+
+
+yorg@yorg-desktop ~/DevOps_FTG_nauka/Git $ echo "dupa" > dupa.txt
+yorg@yorg-desktop ~/DevOps_FTG_nauka/Git $ git add dupa.txt 
+yorg@yorg-desktop ~/DevOps_FTG_nauka/Git $ git commit -m "commit do dupy"
+
+[master 6573bb9] commit do dupy
+ 1 file changed, 1 insertion(+)
+ create mode 100644 Git/dupa.txt
+
+yorg@yorg-desktop ~/DevOps_FTG_nauka/Git $ 
+yorg@yorg-desktop ~/DevOps_FTG_nauka/Git $ git log
+
+commit 6573bb9dbcec60a9d25b41beeeac5418046ca96e
+Author: Yorg666 <Yorg666@dom.hell>
+Date:   Wed Sep 28 15:06:17 2016 +0200
+
+    commit do dupy
+
+
+yorg@yorg-desktop ~/DevOps_FTG_nauka/Git $ git reset HEAD~1
+yorg@yorg-desktop ~/DevOps_FTG_nauka/Git $ git log
+commit 0a56b14b47a20a6d84f075bbc066e5dbe2cd0773
+Author: Nowaczyk <knnk@gft.com>
+Date:   Wed Sep 28 13:07:46 2016 +0200
+
+    tutorial Gita
+
+yorg@yorg-desktop ~/DevOps_FTG_nauka/Git $ ls -la
+razem 40
+drwxr-xr-x 4 yorg yorg 4096 wrz 28 15:06 .
+drwxr-xr-x 6 yorg yorg 4096 wrz 28 14:31 ..
+-rw-r--r-- 1 yorg yorg   32 wrz 28 15:00 bardzo dobry interaktywny tutorial.txt
+-rw-r--r-- 1 yorg yorg   40 wrz 28 13:09 bardzo dobry kurs Atlassiana.txt
+-rw-r--r-- 1 yorg yorg   88 wrz 28 13:09 Creating a feature branch.txt
+-rw-r--r-- 1 yorg yorg    5 wrz 28 15:06 dupa.txt
+drwxr-xr-x 2 yorg yorg 4096 wrz 28 15:04 HowTo
+-rw-r--r-- 1 yorg yorg  345 wrz 28 13:09 Incorporating a finished feature on develop.txt
+-rw-r--r-- 1 yorg yorg  139 wrz 28 13:09 info od  Michała.txt
+
