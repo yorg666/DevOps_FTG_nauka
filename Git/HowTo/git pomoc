@@ -1,0 +1,6 @@
+
+To polecenie wyświetli stronę man polecenia rebase
+git help rebase
+
+To polecenie wylistuje parametry polecenenia rebase wraz z krótkim opisem
+git rebase -h
