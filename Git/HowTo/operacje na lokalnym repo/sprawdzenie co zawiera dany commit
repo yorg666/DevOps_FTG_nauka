@@ -1,0 +1,5 @@
+To polecenie pokaże listę plików
+git diff-tree --no-commit-id --name-only -r bd61ad98
+
+To polecenie dodatkowo pokaże zmiany w plikach
+git show bd61ad98 
