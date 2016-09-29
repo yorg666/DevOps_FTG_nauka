@@ -1,0 +1,83 @@
+Podczas tworzenia nowego projektu wybrałem:
+- Create project
+- Pointing to BitBucked Cloud repository
+
+Teraz muszę utworzyć OAuth consumer w Bitbucket
+
+Connection type:	 
+Bitbucket Cloud
+
+Please register OAuth consumer on Bitbucket Cloud using the following parameters:
+URL:	http://localhost:8111 
+Callback URL:	http://localhost:8111/oauth/bitbucket/ 
+Permissions:	Account: Read, Repositories: Read
+
+And once registered, enter the key and the secret in the form below.
+Display name:*	
+Bitbucket Cloud
+Provide some name to distinguish this connection from others.
+Key:*	
+Tu podaje wygenerowany klucz dla stworzonego w Bitbucket customera
+Secret:*	
+Tu podaje wygenerowany secret dla stworzonego w Bitbucket customera
+
+
+Wchodzę do Bitbucket
+prawy róg klikam awatar
+wybieram Bitbucket settings
+po lewej stronie po środku wybieram OAuth
+klikam Add OAuth consumer
+
+wypełniam go danymi z okienka TeamCity czyli:
+
+URL:	http://localhost:8111 
+Callback URL:	http://localhost:8111/oauth/bitbucket/ 
+Permissions:	Account: Read, Repositories: Read
+
+
+kikam save i mam stworzonego consumera
+
+Pod Add Customer zobacze mojego nowo stworzonego customera.
+klikam jego nazwę żeby zobaczyć wygenerowany Key i Secret 
+
+
+Wracam do TeamCity i wpisuje klucz i secret i robię save
+
+W następnym okienku Create Project From Bitbucket Cloud robię refresh i łączę się do Bitbucketa
+
+powinienem widzieć projekt Bitbucketowy
+
+wchodząc na projekt widzę 
+
+
+Parent project: *	
+<Root project>
+
+Repository URL: *	
+https://yorg666@bitbucket.org/yorg666/scala_learning.git
+  
+A VCS repository URL. Supported formats: http(s)://, svn://, git://, etc. as well as URLs in Maven format. 
+List remote refs failed: org.eclipse.jgit.errors.TransportException: https://bitbucket.org/yorg666/scala_learning.git: not authorized
+Username:	
+yorg666
+Optional. Provide username if access to repository requires authentication.
+Password:	
+••••••••••••
+Optional. Provide password if access to repository requires authentication
+
+tu podaję login i hasło do połaczenia się do bitbucketa:
+login yorg666
+hasło 234ds!@#$!sasd
+
+klikam proceed.
+
+widzę komunikat 
+New project "Scala Learning", build configuration "Build" and VCS root "https://yorg666@bitbucket.org/yorg666/scala_learning.git#refs/heads/master" have been successfully created.
+
+wybrałem building step Simple Building Tool i puściłem build
+Success!
+
+
+
+
+
