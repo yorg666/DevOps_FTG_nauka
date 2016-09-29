@@ -1,0 +1,11 @@
+Stworzenie taga
+git tag -a v.1 5a384ce80638b4ee86d322098444a0d4a5e4498e
+
+Wyświetlenie istniejących tagów
+yorg@yorg-desktop ~/DevOps_FTG_nauka/Git $ git tag
+v.1
+
+Wyświetlenie informacji o otagowanym commicie
+git show v.1
+
+

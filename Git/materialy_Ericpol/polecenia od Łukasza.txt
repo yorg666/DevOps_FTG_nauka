@@ -14,9 +14,9 @@ git push origin
 
 2)	Review
 
-git add -A
-git commit -s
-git rebase -i origin/master
+git add -A to samo co got add *
+git commit -s dodaje do commita add Signed-off-by:
+git rebase -i origin/master  rebase interakcyjny
 git review -f –v
 
 Logika operacji i przykładowa implementacja: git_automatic_repository.sh w /proj/siu_evolution/tools/git

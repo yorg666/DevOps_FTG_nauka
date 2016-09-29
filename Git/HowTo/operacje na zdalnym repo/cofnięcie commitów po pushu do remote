@@ -1,0 +1,6 @@
+
+najpierw cofam lokalne repozytorium do takiego stanu jaki chce żeby był na remote
+git reset --hard HEAD~1
+
+A teraz to polecenie sprawi że remote zostanie cofnięty o jeden commit. 
+git push -f <remote> <branch>

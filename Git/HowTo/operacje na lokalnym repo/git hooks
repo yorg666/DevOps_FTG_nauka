@@ -1,0 +1,35 @@
+git hooks to skrypty które są triggerowane np przez commit
+
+znajdują sie w katalogu .git/hooks
+
+-rwxr-xr-x 1 yorg yorg  452 wrz  6 20:59 applypatch-msg.sample
+-rwxr-xr-x 1 yorg yorg  896 wrz  6 20:59 commit-msg.sample
+-rwxr-xr-x 1 yorg yorg  189 wrz  6 20:59 post-update.sample
+-rwxr-xr-x 1 yorg yorg  398 wrz  6 20:59 pre-applypatch.sample
+-rwxr-xr-x 1 yorg yorg 1642 wrz  6 20:59 pre-commit.sample
+-rwxr-xr-x 1 yorg yorg 1239 wrz  6 20:59 prepare-commit-msg.sample
+-rwxr-xr-x 1 yorg yorg 1352 wrz  6 20:59 pre-push.sample
+-rwxr-xr-x 1 yorg yorg 4898 wrz  6 20:59 pre-rebase.sample
+-rwxr-xr-x 1 yorg yorg 3611 wrz  6 20:59 update.samp
+
+żeby utworzyć takiego hooka robię
+cp pre-commit.sample pre-commit
+następnie edytuję plik pre-commit dodając np testy które mają przejść na commitowanym kodzie.
+
+Hook powinien zwrócić 0 jeżeli kod poprawnie przejdzie skrypt
+lub zwrócić wartość nie zerową jeżeli commit ma być zablokowany
+
+hooki do działania wymagają chmod +x 
+
+Przykład:
+vim .git/hooks/pre-commit
+
+#!/bin/bash
+
+google-chrome www.wp.pl
+
+chmod +x ./.git/hooks/pre-commit
+
+przed zrobieniem commita wykona się skrypt i otworzy się przeglądarka
+
+
