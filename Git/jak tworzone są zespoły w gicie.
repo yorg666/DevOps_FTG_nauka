@@ -1,0 +1,6 @@
+jeżeli mam developerów A B C to:
+ A ma dodane jako remote repozytorium B i C
+ B ma dodane jako remote repozytorium A i C
+ C ma dodane jako remote repozytorium A i B
+
+dzięki temu mogą pushować zmiany do swoich repozytoriów
