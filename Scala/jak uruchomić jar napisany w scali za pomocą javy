@@ -1,0 +1,15 @@
+buduję pakiet z napisanego programu scalowego w sbt
+
+sbt
+package
+w rezultacie otrzymam jar target/scala-2.11/hello_2.11-0.0.1-SNAPSHOT.jar  
+
+uruchamiam jara scalowego w javie gdzie Hello jest obiektem zawierającym metodę main
+java -cp ~/.sbt/boot/scala-2.10.6/lib/scala-library.jar:target/scala-2.11/hello_2.11-0.0.1-SNAPSHOT.jar Hello
+
+lub
+po zbudowaniu paczki za pomocą assemble a nie package mogę uruchomić jara tak
+java -jar /home/yorg/DevOps_FTG_nauka/Scala/SBT/hello/target/scala-2.11/hello-assembly-0.0.1-SNAPSHOT.jar
+
+
+

@@ -1,0 +1,14 @@
+polecenie assembly do tworzonego jara doda wszystkie potrzebne zależności
+
+
+żeby dodać nową funkcjonalność do sbt np polecenie assembly muszę 
+będąc w projekcie
+
+cd project
+vi assembly.sbt
+
+dopisać 
+addSbtPlugin("com.eed3si9n" % "sbt-assembly" % "0.14.3")
+
+przeładować projekt
+reload

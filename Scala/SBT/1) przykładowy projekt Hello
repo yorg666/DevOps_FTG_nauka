@@ -1,0 +1,106 @@
+[info] Set current project to sbt (in build file:/home/yorg/DevOps_FTG_nauka/Scala/SBT/)
+> 
+
+yorg@yorg-desktop ~/DevOps_FTG_nauka/Scala/SBT $ mkdir hello
+yorg@yorg-desktop ~/DevOps_FTG_nauka/Scala/SBT $ cd hello/
+yorg@yorg-desktop ~/DevOps_FTG_nauka/Scala/SBT/hello $  vi build.sbt
+
+name := "hello"
+
+version := "0.0.1-SNAPSHOT"
+
+scalaVersion := "2.9.2"
+
+yorg@yorg-desktop ~/DevOps_FTG_nauka/Scala/SBT/hello $ mkdir -p src/main/scala
+yorg@yorg-desktop ~/DevOps_FTG_nauka/Scala/SBT/hello $ mkdir -p src/test/scala
+yorg@yorg-desktop ~/DevOps_FTG_nauka/Scala/SBT/hello $ vi src/main/scala/Hello.scala
+
+object Hello extends App {
+ println("Hello")
+}
+
+yorg@yorg-desktop ~/DevOps_FTG_nauka/Scala/SBT/hello $ sbt
+[info] Set current project to hello (in build file:/home/yorg/DevOps_FTG_nauka/Scala/SBT/hello/)
+> 
+
+przydatne polecenia: help, tasks, settings
+
+próbuję skompilować mój program
+
+> compile
+
+[info] 'compiler-interface' not yet compiled for Scala 2.9.2. Compiling...
+error: error while loading CharSequence, class file '/usr/lib/jvm/java-8-oracle/jre/lib/rt.jar(java/lang/CharSequence.class)' is broken
+(bad constant pool tag 18 at byte 10)
+error: error while loading AnnotatedElement, class file '/usr/lib/jvm/java-8-oracle/jre/lib/rt.jar(java/lang/reflect/AnnotatedElement.class)' is broken
+(bad constant pool tag 18 at byte 76)
+error: error while loading Arrays, class file '/usr/lib/jvm/java-8-oracle/jre/lib/rt.jar(java/util/Arrays.class)' is broken
+(bad constant pool tag 18 at byte 765)
+error: error while loading Comparator, class file '/usr/lib/jvm/java-8-oracle/jre/lib/rt.jar(java/util/Comparator.class)' is broken
+(bad constant pool tag 18 at byte 20)
+/tmp/sbt_b7320c08/xsbt/ExtractAPI.scala:549: error: java.util.Comparator does not take type parameters
+  private[this] val sortClasses = new Comparator[Symbol] {
+                                      ^
+5 errors found
+[info] Attempting to fetch org.scala-sbt % compiler-interface % 0.13.12. This operation may fail.
+[info] Resolving org.scala-sbt#interface;0.13.12 ...
+[info] downloading https://repo.typesafe.com/typesafe/ivy-releases/org.scala-sbt/compiler-interface/0.13.12/srcs/compiler-interface-sources.jar ...
+[info] 	[SUCCESSFUL ] org.scala-sbt#compiler-interface;0.13.12!compiler-interface.jar(src) (2468ms)
+[error] (compile:compileIncremental) Error compiling sbt component 'compiler-interface'
+[error] Total time: 9 s, completed 2016-09-30 12:12:29
+> run
+[info] Compiling 1 Scala source to /home/yorg/DevOps_FTG_nauka/Scala/SBT/hello/target/scala-2.9.2/classes...
+[info] 'compiler-interface' not yet compiled for Scala 2.9.2. Compiling...
+error: error while loading CharSequence, class file '/usr/lib/jvm/java-8-oracle/jre/lib/rt.jar(java/lang/CharSequence.class)' is broken
+(bad constant pool tag 18 at byte 10)
+error: error while loading AnnotatedElement, class file '/usr/lib/jvm/java-8-oracle/jre/lib/rt.jar(java/lang/reflect/AnnotatedElement.class)' is broken
+(bad constant pool tag 18 at byte 76)
+error: error while loading Arrays, class file '/usr/lib/jvm/java-8-oracle/jre/lib/rt.jar(java/util/Arrays.class)' is broken
+(bad constant pool tag 18 at byte 765)
+error: error while loading Comparator, class file '/usr/lib/jvm/java-8-oracle/jre/lib/rt.jar(java/util/Comparator.class)' is broken
+(bad constant pool tag 18 at byte 20)
+/tmp/sbt_529c506f/xsbt/ExtractAPI.scala:549: error: java.util.Comparator does not take type parameters
+  private[this] val sortClasses = new Comparator[Symbol] {
+                                      ^
+5 errors found
+[info] Attempting to fetch org.scala-sbt % compiler-interface % 0.13.12. This operation may fail.
+[info] Resolving org.scala-sbt#interface;0.13.12 ...
+[error] (compile:compileIncremental) Error compiling sbt component 'compiler-interface'
+[error] Total time: 1 s, completed 2016-09-30 12:13:03
+> 
+
+może to dlatego że mam wersję scali 2.9.2
+instalacja scali 2.11.8
+
+sciagnąłem paczkę scala-2.11.8.tgz
+tar -zxvf  scala-2.11.8.tgz
+sudo mv scala-2.11.8 /usr/local/share
+
+dodałem do ~/.bashrc wpis
+SCALA_HOME=/usr/local/share/scala-2.11.8
+PATH=$PATH:$GOPATH/bin:$SCALA_HOME/bin 
+
+a potem w terminalu wywołałem zaktualizowany plik barshrc
+
+source ~/.bashrc
+
+teraz  mogę skompilowac i uruchomic program
+
+[info] Set current project to hello (in build file:/home/yorg/DevOps_FTG_nauka/Scala/SBT/hello/)
+> compile
+[info] Updating {file:/home/yorg/DevOps_FTG_nauka/Scala/SBT/hello/}hello...
+[info] Resolving jline#jline;2.12.1 ...
+[info] Done updating.
+[info] Compiling 1 Scala source to /home/yorg/DevOps_FTG_nauka/Scala/SBT/hello/target/scala-2.11/classes...
+[info] 'compiler-interface' not yet compiled for Scala 2.11.8. Compiling...
+[info]   Compilation completed in 7.16 s
+[success] Total time: 9 s, completed 2016-09-30 12:38:09
+> run
+[info] Running Hello 
+Hello
+[success] Total time: 0 s, completed 2016-09-30 12:41:16
+
+
+
+
+
