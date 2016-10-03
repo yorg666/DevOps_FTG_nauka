@@ -1,0 +1,7 @@
+zmiana nazwy pliku dziala podobnie jak w Linuxie czyli
+git mv nazwapliku
+
+to fizyczni robi
+git rm -cached
+mv plik plik_nowa_nazwa
+git add nowa_nazwa

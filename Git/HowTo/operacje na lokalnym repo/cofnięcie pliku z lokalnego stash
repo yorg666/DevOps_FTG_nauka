@@ -1,7 +1,0 @@
-jeżeli przypadkiem dodam coś do stash czego nie chce commitować, mogę cofnąć taki plik za pomocą git reset
-
-touch test.txt
-git add test.txt
-git reset test.txt
-
-

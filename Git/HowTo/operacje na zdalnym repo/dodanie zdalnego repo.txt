@@ -1,0 +1,7 @@
+Git jako system dystrybułowany , nie posiada jednego centralnego repozytorium, wiec techniczne wszystkie repozytoria to remote
+
+dodanie remote
+
+git remote add [alias] [url]
+np
+git remote add GitHub git@github.com:Yakiloo/HelloWorld-GitHub.git

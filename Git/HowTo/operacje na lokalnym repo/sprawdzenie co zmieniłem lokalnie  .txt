@@ -1,0 +1,8 @@
+zeby sprawdzic co zrobilem lokalnie w plikach a nie dodalem jeszcze do stage
+git diff
+
+zeby sprawdzic co zrobilem lokalnie w plikach i dodalem  do stage
+git diff -cached
+
+zeby sprawdzic co zrobilem lokalnie w plikach dodanych i niedodanych do stage
+git diff HEAD

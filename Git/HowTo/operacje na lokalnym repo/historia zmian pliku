@@ -6,6 +6,7 @@ git blame -C -L 1,4 548e8024bb5aad1986b2d4cbe8c7579dfff9fa82  -- opcja -C dodatk
 
 lub
 git log -- [filename]
+git log -3   pokazuje tylko ostatnie 3 commity
 
 
 jak sprawdzić jak wylądał plik w danym commicie

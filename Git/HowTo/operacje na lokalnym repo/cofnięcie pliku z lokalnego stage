@@ -1,0 +1,10 @@
+jeżeli przypadkiem dodam coś do stage czego nie chce commitować, mogę cofnąć taki plik za pomocą git reset
+
+touch test.txt
+git add test.txt
+git reset test.txt
+
+lub 
+git reset HEAD -plik1 plik2
+
+

@@ -1,0 +1,72 @@
+Info
+----
+git reflog
+  Use this to recover from *major* mess ups! It's basically a log of the
+  last few actions and you might have luck and find old commits that
+  have been lost by doing a complex merge.
+
+git diff
+  show a diff of the changes made since your last commit
+  to diff one file: "git diff -- <filename>"
+  to show a diff between staging area and HEAD: `git diff --cached`
+
+git status
+  show files added to the staging area, files with changes, and untracked files
+
+git log
+  show recent commits, most recent on top. Useful options:
+  --color       with color
+  --graph       with an ASCII-art commit graph on the left
+  --decorate    with branch and tag names on appropriate commits
+  --stat        with stats (files changed, insertions, and deletions)
+  -p            with full diffs
+  --author=foo  only by a certain author
+  --after="MMM DD YYYY" ex. ("Jun 20 2008") only commits after a certain date
+  --before="MMM DD YYYY" only commits that occur before a certain date
+  --merge       only the commits involved in the current merge conflicts
+
+git log <ref>..<ref>
+  show commits between the specified range. Useful for seeing changes from remotes:
+  git log HEAD..origin/master # after git remote update
+
+git show <rev>
+  show the changeset (diff) of a commit specified by <rev>, which can be any
+  SHA1 commit ID, branch name, or tag (shows the last commit (HEAD) by default)
+
+  also to show the contents of a file at a specific revision, use 
+     git show <rev>:<filename>
+  this is similar to cat-file but much simpler syntax.
+
+git show --name-only <rev>
+  show only the names of the files that changed, no diff information.
+
+git blame <file>
+  show who authored each line in <file>
+
+git blame <file> <rev>
+  show who authored each line in <file> as of <rev> (allows blame to go back in
+  time)
+
+git gui blame
+  really nice GUI interface to git blame
+
+git whatchanged <file>
+  show only the commits which affected <file> listing the most recent first
+  E.g. view all changes made to a file on a branch:
+    git whatchanged <branch> <file>  | grep commit | \
+         colrm 1 7 | xargs -I % git show % <file>
+  this could be combined with git remote show <remote> to find all changes on
+  all branches to a particular file.
+
+git diff <commit> head path/to/fubar
+  show the diff between a file on the current branch and potentially another branch
+
+git diff --cached [<file>]
+  shows diff for staged (git-add'ed) files (which includes uncommitted git cherry-pick'ed files)
+
+git ls-files
+  list all files in the index and under version control.
+
+git ls-remote <remote> [HEAD]
+  show the current version on the remote repo. This can be used to check whether
+  a local is required by comparing the local head revision.

@@ -1,0 +1,2 @@
+jeżeli mam zmiany do push  a ktoś od czasu kiedy robiłem pull wprowadził jakieś zmiany do remote repo
+przed push muszę zrobić pull, zmergować zmiany a dopiero potem mogę zrobić push swoich

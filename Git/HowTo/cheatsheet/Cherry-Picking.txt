@@ -1,0 +1,19 @@
+Cherry-Picking
+--------------
+
+git cherry-pick [--edit] [-n] [-m parent-number] [-s] [-x] <commit>
+  selectively merge a single commit from another local branch
+  Example: git cherry-pick 7300a6130d9447e18a931e898b64eefedea19544
+
+git hash-object <file-path>
+  get the blob of some file whether it is in a repository or not
+
+Find the commit in the repository that contains the file blob:
+
+    obj_blob="$1"
+    git log --pretty=format:'%T %h %s' \
+    | while read tree commit subject ; do
+        if git ls-tree -r $tree | grep -q "$obj_blob" ; then
+            echo $commit "$subject"
+        fi
+    done

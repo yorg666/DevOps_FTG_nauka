@@ -1,0 +1,14 @@
+Reverting
+---------
+
+git revert <rev>
+  reverse commit specified by <rev> and commit the result.  This does *not* do
+  the same thing as similarly named commands in other VCS's such as "svn
+  revert" or "bzr revert", see below
+
+git checkout <file>
+  re-checkout <file>, overwriting any local changes
+
+git checkout .
+  re-checkout all files, overwriting any local changes.  This is most similar
+  to "svn revert" if you're used to Subversion commands

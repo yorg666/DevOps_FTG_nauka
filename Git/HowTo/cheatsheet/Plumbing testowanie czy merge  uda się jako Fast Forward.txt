@@ -1,0 +1,6 @@
+Plumbing
+--------
+
+test <sha1-A> = $(git merge-base <sha1-A> <sha1-B>)
+  determine if merging sha1-B into sha1-A is achievable as a fast forward;
+  non-zero exit status is false.

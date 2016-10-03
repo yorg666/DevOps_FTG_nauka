@@ -1,0 +1,11 @@
+Tags
+----
+
+git tag -l
+  Will list all tags defined in the repository.
+
+git co <tag_name>
+  Will checkout the code for a particular tag. After this you'll
+  probably want to do: 'git co -b <some branch name>' to define
+  a branch. Any changes you now make can be committed to that
+  branch and later merged.

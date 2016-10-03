@@ -1,0 +1,10 @@
+wchodzę na stronę https://www.openshift.org/vm/
+
+OpenShift ma powyłączane niektóre zabezpieczenia żeby developerzy mogli używać dowolnego image np z DockerHub.
+Normalnie OpenShift nie zezwala na uruchamianie obrazów z konta root ani z userId ktore nie zostało losowo wygenerowane.
+
+Sporo obrazów na DockerHub nie przestrzega tej polityki i umożliwia działa na koncie root oraz nie patchuje znanych  luk bezpieczeństwa
+
+instaluję potrzebne zależności
+https://www.virtualbox.org/
+https://www.vagrantup.com/downloads.html

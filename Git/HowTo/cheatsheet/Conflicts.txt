@@ -1,0 +1,16 @@
+Conflicts
+---------
+
+git mergetool
+  work through conflicted files by opening them in your mergetool (opendiff,
+  kdiff3, etc.) and choosing left/right chunks. The merged result is staged for
+  commit.
+
+For binary files or if mergetool won't do, resolve the conflict(s) manually
+and then do:
+
+  git add <file1> [<file2> ...]
+
+Once all conflicts are resolved and staged, commit the pending merge with:
+
+  git commit

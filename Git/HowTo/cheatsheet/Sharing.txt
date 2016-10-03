@@ -1,0 +1,27 @@
+Sharing
+-------
+
+git fetch <remote>
+  update the remote-tracking branches for <remote> (defaults to "origin").
+  Does not initiate a merge into the current branch (see "git pull" below).
+
+git pull
+  fetch changes from the server, and merge them into the current branch.
+  Note: .git/config must have a [branch "some_name"] section for the current
+  branch, to know which remote-tracking branch to merge into the current
+  branch.  Git 1.5.3 and above adds this automatically.
+
+git push
+  update the server with your commits across all branches that are *COMMON*
+  between your local copy and the server.  Local branches that were never
+  pushed to the server in the first place are not shared.
+
+git push origin <branch>
+  update the server with your commits made to <branch> since your last push.
+  This is always *required* for new branches that you wish to share. After
+  the first explicit push, "git push" by itself is sufficient.
+
+git push origin <branch>:refs/heads/<branch>
+  E.g. git push origin twitter-experiment:refs/heads/twitter-experiment
+  Which, in fact, is the same as git push origin <branch> but a little
+  more obvious what is happening.

@@ -1,0 +1,4 @@
+usunięcie brancha 
+
+git branch -d nazwa_brancha
+

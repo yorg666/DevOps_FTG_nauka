@@ -1,0 +1,50 @@
+Remotes
+-------
+
+git remote add <remote> <remote_URL>
+  adds a remote repository to your git config.  Can be then fetched locally.
+  Example:
+    git remote add coreteam git://github.com/wycats/merb-plugins.git
+    git fetch coreteam
+
+git push <remote> :refs/heads/<branch>
+  delete a branch in a remote repository
+
+git push <remote> <remote>:refs/heads/<remote_branch>
+  create a branch on a remote repository
+  Example: git push origin origin:refs/heads/new_feature_name
+
+git push <repository> +<remote>:<new_remote>
+  replace a <remote> branch with <new_remote>
+  think twice before do this
+  Example: git push origin +master:my_branch
+
+git remote prune <remote>
+  prune deleted remote-tracking branches from "git branch -r" listing
+
+git remote add -t master -m master origin git://example.com/git.git/
+  add a remote and track its master
+
+git remote show <remote>
+  show information about the remote server.
+
+git checkout -b <local branch> <remote>/<remote branch>
+  Eg.:
+    git checkout -b myfeature origin/myfeature
+    git checkout -b myfeature remotes/<remote>/<branch>
+
+  Track a remote branch as a local branch. It seems that
+  somtimes an extra 'remotes/' is required, to see the exact
+  branch name, 'git branch -a'.
+
+git pull <remote> <branch>
+git push
+  For branches that are remotely tracked (via git push) but
+  that complain about non-fast forward commits when doing a
+  git push. The pull synchronizes local and remote, and if
+  all goes well, the result is pushable.
+
+git fetch <remote>
+  Retrieves all branches from the remote repository. After
+  this 'git branch --track ...' can be used to track a branch
+  from the new remote.

@@ -1,0 +1,21 @@
+Fix mistakes / Undo
+-------------------
+
+git reset --hard
+  abandon everything since your last commit; this command can be DANGEROUS.
+  If merging has resulted in conflicts and you'd like to just forget about
+  the merge, this command will do that.
+
+git reset --hard ORIG_HEAD or git reset --hard origin/master 
+  undo your most recent *successful* merge *and* any changes that occurred
+  after.  Useful for forgetting about the merge you just did.  If there are
+  conflicts (the merge was not successful), use "git reset --hard" (above)
+  instead.
+
+git reset --soft HEAD^
+  forgot something in your last commit? That's easy to fix. Undo your last
+  commit, but keep the changes in the staging area for editing.
+
+git commit --amend
+  redo previous commit, including changes you've staged in the meantime.
+  Also used to edit commit message of previous commit.

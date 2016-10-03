@@ -1,0 +1,6 @@
+usuniecie z repozytorium, stage area, i lokalnie na dysku
+git rm nazwa_pliku
+
+usuniecie z repozytorium, stage area ale pozostawienie lokalnie na dysku
+git rm nazwa_pliku -cached
+

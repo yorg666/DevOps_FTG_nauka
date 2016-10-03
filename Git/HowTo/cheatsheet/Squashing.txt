@@ -1,0 +1,7 @@
+Squashing
+---------
+WARNING: "git rebase" changes history. Be careful. Google it.
+
+git rebase --interactive HEAD~10
+  (then change all but the first "pick" to "squash")
+  squash the last 10 commits into one big commit

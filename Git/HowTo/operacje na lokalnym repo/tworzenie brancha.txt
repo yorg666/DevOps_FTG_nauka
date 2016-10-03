@@ -1,0 +1,9 @@
+tworzenie brancha
+git branch
+
+przejście na brancha
+
+git checkout branch
+
+jednoczesne utworzenie i przejście na brancha
+git checkout -b nazwa_brancha

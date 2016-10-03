@@ -1,0 +1,3 @@
+skrócona informacja o loklanym statusie
+
+git st -s

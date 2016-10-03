@@ -2,3 +2,10 @@ git pull  = git fetch + git merge
 
 git fetch sciąga zmiany z remote repozytorium ale nie integruje ich z lokalnymi plikami tylko przechowuje w katalogu ./git/refs/remotes
 git merge scala lokalne pliki z tym co przyszło ze zdalnego repozytorium.
+
+
+jeżeli zrobię pull i będą merge będę musiał z wszystich plików obiętych mergem pousuwać nagłowki.
+Robiąc najpierw fetch a potem ręcznie merge mam większą kontrolę nad mergowaniem. 
+
+czyli git fetch origin master
+git merge origin/master

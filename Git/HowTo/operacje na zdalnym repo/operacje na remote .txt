@@ -1,0 +1,14 @@
+
+lista lokalne zamapowancyh remote
+git remote -v
+
+usunięcie lokalnie zamapowanego remote
+
+git remote rm nazw_remote
+np git remote rm GitHub
+
+lista lokalnych i remote branchy
+
+git br -a
+
+

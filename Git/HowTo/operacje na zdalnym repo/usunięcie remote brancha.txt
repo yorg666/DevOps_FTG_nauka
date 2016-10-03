@@ -1,0 +1,2 @@
+usunięcie remote bracha to wykonanie pustego push,   ważny jest :
+git push nazwa_remote:nazwa_brancha
