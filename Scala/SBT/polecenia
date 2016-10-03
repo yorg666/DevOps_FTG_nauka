@@ -1,0 +1,32 @@
+wyświetlenie pomocy
+help
+
+nie wszystkie polecenia są tu widoczne spójrz na sam dół polecenia help.
+
+wyświetlenie pomocy konkretnego polecenia
+help tasks
+
+w ten sposób ustawia się zmienne środowiskowe na czas sesji
+set scalaVersion := "2.11.8"  
+
+zapisanie sesji
+session save
+
+wyświetlenie wartości zmiennej środowiskowej
+show scalaVersion
+
+
+podstawowe informacje o projekcie i sbt
+about
+
+uruchomienie konsoli ze załadowanym całym projektem i dodanym do classpath  
+
+kompilacja źródeł
+compile
+
+skompilowanie i uruchomienie skompilowanego programu
+run
+
+
+wywołanie dowolnego polecenia po zmianie w źródłach  
+~ run

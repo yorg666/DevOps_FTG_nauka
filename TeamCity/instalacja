@@ -1,0 +1,30 @@
+sciagnąłem i rozpakowałem paczkę ze strony głownej TeamCity-10.0.2.tar.gz 
+
+cd /home/yorg/TeamCity/bin
+w terminalu uruchomiłem ./runAll.sh start
+
+logi ze startu cat /home/yorg/TeamCity/buildAgent/logs/teamcity-agent.log
+
+widzę sporo błędów :
+[2016-09-29 15:52:49,090]   WARN - buildServer.AGENT.registration - Error registering on the server via URL http://localhost:8111. Will continue repeating connection attempts. 
+[2016-09-29 15:53:49,381]   INFO - buildServer.AGENT.registration - Registering on server via URL http://localhost:8111. AgentDetails{Name='Default Agent', AgentId=null, BuildId=null, AgentOwnAddress='null', AlternativeAddresses=[192.168.1.10, 172.17.0.1, 172.16.163.1, 192.168.64.1], Port=9090, Version='42234', PluginsVersion='NA', AvailableRunners=[], AvailableVcs=[], AuthorizationToken='', PingCode='sfxapbp0HDNoird4nFZ3LI3GlMYgAL4b'} 
+[2016-09-29 15:53:49,384]   WARN - buildServer.AGENT.registration - Error asking server for the protocols via URL http://localhost:8111/app/agents/protocols. Will try all protocols. Details: unexpected response status code 503 
+[2016-09-29 15:53:49,384]   INFO - buildServer.AGENT.registration - Trying to register on server using 'polling' protocol. 
+[2016-09-29 15:53:49,388]   INFO - buildServer.AGENT.registration - Registration using 'polling' protocol failed: Unexpected server response status code '503' 
+[2016-09-29 15:53:49,388]   INFO - buildServer.AGENT.registration - Trying to register on server using 'xml-rpc' protocol. 
+[2016-09-29 15:53:49,393]   INFO - buildServer.AGENT.registration - Registration using 'xml-rpc' protocol failed: java.io.IOException: Server returned status 503 (service unavailable), try later (enable debug to see stacktrace) 
+[2016-09-29 15:53:49,393]   WARN - buildServer.AGENT.registration - Error registering on the server via URL http://localhost:8111. Will continue repeating connection attempts. 
+
+wchodzę w przeglądarkę http://localhost:8111
+przekierowało mnie na stronę http://localhost:8111/mnt
+
+
+na stronie TeamCity First start określam Data Directory location on the TeamCity server machine: 
+/home/yorg/.BuildServer
+
+zostawiam wewnętrzą bazę danych na potrzeby zabawy w domu
+
+Create Administrator Account
+Tworzę konto
+login yorg666
+hasło #$%#$DFGfgh!

@@ -1,0 +1,21 @@
+SBT umożliwia mi testowanie mojego programu na różnych wersjach scali
+
+uruchomienie programu na scali 2.10.6
+> set scalaVersion := "2.10.6"
+run
+
+uruchomienie programu na scali 2.11.8
+> set scalaVersion := "2.11.8"
+run
+
+zmienna scalaVersion jest ustawiona w tymczasowym wirtualnym środowisku sesji
+
+czyszczenie sesji
+> session clear-all
+
+zapisanie sesji
+> session save-all
+
+wylistowanie sesji
+> session list
+
