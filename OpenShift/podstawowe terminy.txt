@@ -1,0 +1,69 @@
+IaaS - infrastruktura jako usługa
+Przykłady:
+Amazon EC2
+Google Compute Engine in the public cloud,
+OpenStack for private clouds.
+
+Określamy ilość potrzebnego CPU, RAMu i Dysku jakiego potrzebujemy w naszej maszynie a dostawca spina komputery przy użyciu predefiniowanej virtualnej konfiguracji sprzętowej i dostarcza to co chcemy
+ 
+Nadal trzeba jednak samodzielnie zainstalować oprogramowanie, utrzymywać system operacyjny, pakiety, konfigurować sieć, czyli wykonywać całą pracę sysadmina.
+ 
+SaaS - opogramowanie jako usługa
+Przykłady:
+Gmail
+Salesforce
+QuickBooks Online.
+
+Zapisuję się na używanie jakiejś usługi i od razu mogę z niej korzystać, ale jestem ograniczony tym co dostawca usług pozwala mi robić, oraz są niewielkie możliwości customizacji.
+
+PaaS - platforma jako usługa
+Przykłady:
+RED HAT OPENSHIFT - Red Hat OpenShift is an open-source enterprise PaaS (CEAP) that is not based on Cloud Foundry
+APPRENDA  - Apprenda’s enterprise Platform as a Service (PaaS) for Java and .NET
+PIVOTAL CF - Pivotal is a big data and application enterprise PaaS vendor that is owned by VMware
+ 
+Platforma jako usługa jest "middleground" pomiędzy Infrastrukturą a oprogramowaniem jako usługą.
+Na przykładzie OpenShifta za pomocą kilku poleceń jestem w stanie postawić platformę w postaci serwera,bazy danych,repozytorium Gitowego, i skonfigurowanej sieci.
+Taką konfiguracją zajmuje się devops, developerzy dostają od gotowe środowisko do pracy.
+
+Application
+Typowo jest to aplikacja webowa, hostowana przez OpenShifta udostępnione porty HTTP 80, HTTPS 443, SSH 22 oraz WebSocket HTTP 8000 i HTTPS 8443
+
+Gear
+To inaczej serwer kontener który dostarcza zasobów do uruchamiania zdeployowanych na nim aplikacji.
+W OpenShift gear działa w chmurze.
+Są trzy typy gear 
+small, 1GB dysk, 512GB RAM
+medium, 1GB dysk, 1GB RAM
+large 1GB dysk, 2GB RAM
+
+Cartridge
+Żeby Gear mógł działać należy dodać do niego cartridge które są pluginami które posiadają w sobie frameworki lub komponenty które mogą być użyte do uruchomenia aplikacji.
+Gear może mieć zainstalowanych kilka cartridge a jeden i ten sam cartridge może działać na wielu gearach.
+
+Są dwa rodzaje cartridge:
+
+Standalone - są to serwery apliakcyjne lub języków które są skonfiguraowane tak żeby serwować stronę www.
+Przykłady:
+JBoss
+Tomcat
+Python
+Node.js
+
+Embedded - te dostarczają funkcjonalności, ale nie mogą być użyte samodzielnie do stworzenia aplikacji
+Przykłady:
+Baza Danych
+Cron
+
+
+Scalable application
+Skalowalna apliakcja to taka która reaguje na zmianę w natężeniu ruchu i jeżeli jest taka potrzeba automatycznie alokuje potrzebne zasoby w celu obługi ruchu.
+Przy wzmożonym ruchu automatycznie dodawane są nowe Geary z odpowiednio skonnfigurowanymi Cartridgami.
+Kiedy ruch ulega zmniejszeniu, platforma wycofuje nadmiarowe zasoby czyli dezaktywuje nadmiarowe Geary.
+
+
+Client tools, Web Console, Eclipse pluginami
+Mogę się komunikować z platformą za pomocą RHC czyli narzędzi wiersza polecenia RED HATA, konsoli www lub pluginu w Eclipse.
+Używam takiego połącznia żeby stworzyć nową aplikację lub dodać nowy cartridge. Reszta pracy odbywa się przez Git i SSH
+
+CI/CD - Continuous Integration, Continuous Delivery 

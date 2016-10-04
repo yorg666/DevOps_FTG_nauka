@@ -1,0 +1,19 @@
+Dyskusja na temat podejscia :
+Trzymamy wszystko w Gicie, tzn wersje softu i konfiguracje.
+Konfiguracja była by otagowana
+
+Trzymamy wersję softu w Gicie a konfigurację wersjonujemy w Nexusie.
++ To że wszystko jest w jednym miejscu
+Po ściaganiu snapshota z Nexusa część informacji o binarce jest tracona i nie wiadomo co to za binarka 
+Wersje softu w Gicie będą inne niż wersje konfiguracji w Nexusie
+
+Model ipass git vs nexus nolio
+relase management tool = jeden workflow dla wszystkich środowisk
+Tokenizacja plików
+
+Nolio słabo działa z Ipass.
+Połączenie Docker i Ipass
+
+TeamCity i Ipass są problematyczne.
+
+

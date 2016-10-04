@@ -1,0 +1,91 @@
+OpenShift for Developers: A Guide for Impatient Beginners 1st Edition
+
+Openshift to platforma kontenerów aplikacyjnych łącząca w sobie:
+-PaaS platform as service
+-Docker
+-Kubernetes
+
+Podstawą OpenShifta są:
+- kontenery Dockerowe
+- system Kubernetes który nimi zarządza
+
+Docker:
+- dostarcza lekki przenośny format który służy do generowania obrazów aplikacji działających z różnymi środowiskami
+  robi to przez pakowanie do obrazu wszystkich zależności na poziomie systemu i aplikacji.
+- tak długo jak apliakcja ogranicza jest do jednego kontenera temat jest trywialny
+
+Docker w środowisku produkcyjnym musi odpowiadać na następujące pytania:
+- load balancing pomiedzy konternerami z lub bez  "session affinity"
+"session affinity" oznacza że w klastrze serwerów  request od jednego kienta  zawsze jest routowany na ten sam server.
+To eliminuje potrzebę replikacji sesji (HttpSession or Stateful Session Beans. )
+- montowania dysków utrwalających dane wewnątrz kontenerów
+- rozmieszczenie i planowanie kontenerów w infrastrukturze
+- ciągłe deployowanie 
+  
+  
+Kubernetes:
+- powstał na bazie projektu googla Borg do skalowalnego zarządzania kontenerami (uruchamiał 7000 kontenerów na sekundę)
+- podstawową koncepcją grupowania są przestrzenie nazw (namespaces) 
+- przestrzenie nazw dostarcają zakresowi nazwane zasoby określające jak apliakcja powinna być deployowana
+- nie ma bezpieczeństwa pomiędzy przestrzeniami nazw. "User" w klastrze widzi wszystkie przestrzenie nazw i zdefiniowane w nich zasoby.
+- narzędzie kubectl
+
+
+OpenShift:
+Web Base - na stonce mogę zobaczyć graficzną reprezentację kontenerów, loot balancing między nimi, bazę danych z której korzystają
+
+Command-Line Tool:
+wiersz poleceń napisany w Go
+głowne polecenie to oc
+dzięki oc mam w jednym poleceniu dostęp do OpenShifta, Dockera, Kubernetes
+
+Source-to-Image:
+dzięki temu nie trzeba manualnie tworzyć dockerfile ani ręcznie puszczać buildów.
+Wystarczy że Openshift zna URL do gitowego repozytorium kodu i na podstawie tego sam buduje Dockerowy obraz.
+W tle to co się dzieje to kiedy tworzymy nowy projekt i kontener, platforma porównuje bazowy obraz z tym co jest docelowo potrzebne, źródła, wykonuje build i tworzy nowy obraz Docker "on the fly" 
+
+Przykład:
+Mam projekt javowy który używa Mavena, serwera WildFly i repozytorium gitowego
+Platforma analizując to zrobi:
+-sciągnie  podstawowy obraz WildFly
+-sklonuje repozytorium
+-zidentyfikuje projekt jako Mavenowy
+-puści builda
+-weźmie to co powstało po buildzie (artefakt)
+-na podstawie artefaktu stworzy nowy obraz Dockera zamierajacy wszystkie zależności
+-wykona deploy artefaktu, czyli stworzy kontener
+-uruchomi kontener 
+
+
+Projekt:
+-to jest wrapper wokół przestrzeni nazw
+-dostęp jest kontrolowany przez autoryzację i autentykację opartą o użytkowników i grupy które często mapują się na zespoły
+-dzięki temu Projekty w OpenShifcie działają jak ściany działowe pomiedzy przestrzeniami nazw
+
+Pod:
+-podstawowa jednostka w OpenShifcie
+-to jeden lub więcej kontenerów które mają zagwarantowane że będą działać na tym samym hoście.
+-kontenery w Podzie współdzielą unikatowy adres IP i wszystkie volumeny (to gdzie dane są utrwalane, macierze, dyski, bazy)
+-komunikują się ze sobą za pomocą "localhosta"
+-kontenery są  startowane z obrazu Dockerowego 
+
+- w procesie skalowania tworzone są kopie aplikacji, każda z własnym stanem
+- kopie zarządzane są przez "replication controller"
+- każdy pod ma uniaktowy IP
+- pody są grupowane w usługę (service) z własnym IP i nazwą DNS widoczną tylko wewnątrz kalstra.
+- żeby zobaczyć wewnętrzną nazwę DNS usługi na zewnątrz należy zadbać o odpowiedni routing.
+
+
+
+Proces budowania i deployu:
+- konfiguracja budowania zawiera opis jak zbudować kod źródłowy i podstawowy obraz w nowy obraz.
+- buldy mogą być oparte na źródłach (JAVA, PHP, SCALA, PYTHON), S2I, Dockerze
+- każdy build ma webhooki które mogą być triggerowane autoamtycznie  przez zmiany w ich bazowych obrazach lub kodzie źródłowym
+- wynikiem buildu jest obraz przechowywany w rejestrze Dockera i gotowy do dystrybucji na nody.
+- strumień obrazów (image stream) to sposób w jaki OpenShift wersjonuje obrazy.
+- obraz może pochodzić z  rejestru lub z zewnątrz np z Docker Huba
+
+- podczas deployu konfiguracja deploymentu jest tym co określa szablon z którego powstanie Pod, oraz zarządza nowych obrazów i konfiguracji.
+- pojedyncza zmiana to często microservice
+- są różne strategie wdrożenia: shutdown, restart, aktualizacja rolling + hooki pre, mid , post
+- rezultatem wdrożenia jest "replication controller" który zarządza Pod-ami 
