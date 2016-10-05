@@ -110,3 +110,20 @@ Vagrant.configure(2) do |config|
  
 end
 5) vagrant up --provider=virtualbox
+
+dostaję komuniakt o już zajętym porcie 8443
+sprawdzam porty i procesy które na nich działają
+netstat -ao
+
+wyświetlam szczegóły procesu o pid 9300
+C:\Users\knnk>tasklist /fi "pid eq 9300"
+
+Image Name                     PID Session Name        Session#    Mem Usage
+========================= ======== ================ =========== ============
+VBoxHeadless.exe              9300 Console                    2     75,048 K
+#############################################################################################################################
+po restarcie próbuję jeszcze raz C:\Users\knnk\lokalna_konfiguracja
+
+nadal nie dział więc włączam dodatkową opcję w pliku Vagrantfile
+  config.vm.provider "virtualbox" do |vb|
+     vb.gui = true

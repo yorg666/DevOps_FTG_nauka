@@ -1,0 +1,2 @@
+S2I dokłada tylko jedną dodatkową warstwę do bazowego obrazu
+Plik Dockera dokłada kilka/wiele warstw do bazowego obrazu

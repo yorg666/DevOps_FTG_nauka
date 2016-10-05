@@ -1,0 +1,19 @@
+S2I buduje obraz w następujących krokach:
+
+- plik źródłowy i system budowania (java i gradle)
+
+- Assemble script
+: zmienia kod źródłowy w dzialającą aplikację
+: dogrywa potrzebne zależności
+: wstrzykuje konfigurację
+
+- Run script
+: uruchamia końcowy obraz
+: ustawi uruchomienie finałowego obrazu w poleceniu RUN
+
+-Save-artifacts script    
+: wyciągnie te zależności które mogą być ponownie użyte z poprzednich obrazów aplikacji
+
+
+
+

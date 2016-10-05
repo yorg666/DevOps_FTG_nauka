@@ -1,0 +1,8 @@
+Hooki
+pre-assamble
+post-assamble
+pre-run
+etc
+
+usunięcie wsparcia dla Gita - bez remote repozytoriów, zamiast tego możliwe by były tylko lokalne repozytoria
+Wsparcie dla innych platform kontenerowych niż Docker

@@ -1,0 +1,9 @@
+zamiast kodu źródłowego aplikacji mogę mieć:
+konfiguracja frameworków np PHP.ini
+
+obrazy baz danych czyli konfiguracja, skrypty inicjalizujące schematy
+NIE może być samej zaratości bazy danych
+
+Pluginy Jenkinsa
+Ogólna konfiguracja Jenkinsa
+Definicje jobów Jenkinsa

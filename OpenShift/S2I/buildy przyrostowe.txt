@@ -1,0 +1,11 @@
+kiedy S2I wykryje:
+obraz jest kompatybilny z budowaniem przyrostowym (istnieje save-artifacts)
+istnieje poprzedni obraz z taką samą nazwą jak ta dla obecnego buildu
+buildy przyrostowe są włączone
+
+Wykonanie buildu przyrostowego to:
+Tworzony jest nowy obraz docker  z poprzedniego obrazu
+wywołane zostaje save-artifacts na tym kontenerze
+Budowany jest nowy obraz
+: artefakty z poprzedniego buildu zostaną dodane do katalogu artifacts obecnego buildu.
+: Assemble skrypt użyje artefaktów podczas budowania.

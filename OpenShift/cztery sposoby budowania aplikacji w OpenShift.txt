@@ -1,0 +1,34 @@
+Czery sposoby budowania są opisane w http://rafabene.com/2016/07/25/wildfly-swarm-openshift/
+http://developers.redhat.com/blog/2016/06/22/how-to-run-java-fat-jars-in-docker-kubernetes-and-openshift/
+
+Approach 1 – S2I (Source-to-image)
+
+Developer musi wcześniej zainstalować obraz buildera
+Dostępna wersja obrazu buildera używa CentOS7 jako systemu operacyjnego
+Developer nie musi zupełnie znać składni plików Dockerfile
+Developer nie potrzebuje lokalnie zainstalowanego Mavena lub Javy. Te dostarczane są przez obraz buildera.
+Repozytorium mavena jest zgrywane za każdym razem przy nowym  buildzie.
+Developer nie potrzebuje kodu źródłowego lokalnie bo może wskazać ścieżkę do niego jako git url jako parametr obrazu buildera
+OpenShift wyświetla informacje o commicie z którego zbudowny jest obraz
+
+Approach 2 – OpenShift binary builds
+
+Developer jest odpowiedzialby za stworzenie fat-jara i Dockerfila
+Czas buildu jest zredukowany jeżeli fat-jar jest zbudowany z użyciem pre-cache  repozytorium Mavenovego ~/.m2
+Developer powienien mieć kod źródłowy lokalnie, złą praktyką jest trzymanie jarów w Gicie
+OpenShift nie wyświetla informacji o commicie z którego zbudowny jest obraz
+
+Approach 3 – Use Fabric8 Maven plugin
+
+Developer potrzebuje dostępu do rejestru dockerowego OpenShifta
+Developer nie musi wykonywać żadnych poleceń OpenShiftowych
+Nie ma pliku DeploymentConfig stworzonego przez Fabric8 Maven plugin
+Fabric8 Maven plugin automatycznie tworzy usługi i Routes OpenShifta 
+Cała konfiguracja openshifta jest w pom.xml
+ReadinessProbe i livenessProbe może być skonfigurowany w  pom.xml
+
+Approach 4 – Use a pre-built image from docker registry
+
+Aplikację tworzy proste polecenie tworzy 
+Potrzeby jest już zbudowany obraz w rejestrze dockera
+Jakakolwiek zmiana w kodzie źródłowym spowoduje potrzebę przebudowania i opublikowania obrazu

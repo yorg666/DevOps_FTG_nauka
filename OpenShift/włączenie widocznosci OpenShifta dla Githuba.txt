@@ -1,0 +1,1 @@
+bez zastosowania  http://www.ultrahook.com/ Openshift i GitWeb nie bedą się widzieć, choć bedzie ustawiony prawidłowy webhook w Githubie, dlatego że w obrazie all-in-one-vm wszystko dzieje się w prywatnej sieci 10.2.2.2:8443

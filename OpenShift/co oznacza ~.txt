@@ -1,0 +1,3 @@
+W przykladowym polecniu
+oc new-app wildfly:latest~https://github.com/gshipley/book-insultapp.git --name='insults'
+~ oznacza że chcemy użyć już istniejącego repozytorium kodu źródłowego i użyć do budowania S2I 

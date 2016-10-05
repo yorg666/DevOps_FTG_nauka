@@ -1,0 +1,7 @@
+1) Tworzy kontener oprarty o bazowy obraz i przekazuje do niego tara zawierającego:
+-kod źródłowy aplikacji w katalogu src
+-artefakty użyte do budowania w katalogu artifacts(buildy przyrostowe)
+2) ustawia zmienne środowiskowe z .s2i/enviroment (to jest opcjonalny krok)
+3)uruchamia kontener i wywołuje assemble script
+4) czeka aż zakończy się wykonywanie skryptu assemble
+5)commituje kontener, ustawia RUN jako polecenie dla wyjściowego obrazu, nadaje taga na podstawie podanej w parametrze nazwy

@@ -1,0 +1,13 @@
+To się przydaje gdy bazowy obraz z jakiegoś powodu nie posiada "sh" lub "tar"
+
+
+Jeżeli S2I wykryje że obraz nie posiada w sobie binarek "sh" lub "tar" zostanie wykonany build pośredni 
+
+Build pośredni:
+generowany jest plik dockera z obrazu buildera
+dodaje katalog z kodem źródowym apliakcji
+Docker buduje pośredni obraz
+S2I buduje z użyciem obrazu pośredniego (który zawiera już pliki źródłowe)
+
+Uwaga:
+zostaną wywołane wszystkie polecenia oznaczone ONBUILD

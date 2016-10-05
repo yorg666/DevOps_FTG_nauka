@@ -1,0 +1,10 @@
+Jest możliwość usunięcia z obrazu narzędzi które zostały użyte do budowania kodu źródłowego (maven,gradle,make)
+Takie buildy nazywają się S2I extended builds (not GA)
+
+przykład
+s2i build . maven my/wildfly --runtime-image wfruntime -a /tmp/war/ROOT.war
+. określa lokalny katalog
+maven - czym będziemy budować
+--runtime-image - to jest flaga która mówi s2i że ma być wykonany extended build
+wfruntime - nazwa obrazu
+-a /tmp/war/ROOT.war - to jest to co zostanie wyextraktowane na zewnątrz runtime obrazu

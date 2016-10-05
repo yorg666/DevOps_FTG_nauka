@@ -1,0 +1,19 @@
+Skrypty Assamble, Run, Save-artifacts mogą być nadpisywane
+: przez wskazanie repozytorium lub  URL HTTP
+
+Polityka Pull
+:Never
+:Always
+:IfNotPresent
+
+Zmienne środowiskowe
+określone w skrypcie .s2i-enviroment
+podane jako parametry wiersza poleceń
+
+Włączanie i wyłączanie buildów przyrostowych
+Wstrzykiwanie plików które nie bedą obecne w końcowym obrazie
+:Lokalne pliki mogą być dostępne podczas Assamble
+Przykład
+certyfikat potrzeby skryptowi Assamble, wskazanie serwera proxy, lub adresu Nexusa
+
+:Zawartość plików nie będzie dodana do końcowego obrazu. 

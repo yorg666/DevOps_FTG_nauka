@@ -1,0 +1,1 @@
+exec npm run -d $NPM_RUN

@@ -1,0 +1,2 @@
+Jeżeli mam kod np w GitHubie lub w BitBuckecie i ścieżkę do niego mam wskazaną w ustawieniach budowania obrazu w OpenShift
+Mogę dodać "Webhook" do GitHuba lub Bitbucketa który będzie triggerem do puszczenia builda.

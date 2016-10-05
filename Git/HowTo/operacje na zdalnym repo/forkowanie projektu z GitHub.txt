@@ -1,0 +1,2 @@
+jeżeli wejdę na dowolny projekt w GitHubie i wybiorę opcję w prawym górym rogu Fork
+To zostanie utworzony fork tego projektu na moim koncie w GitHubie.

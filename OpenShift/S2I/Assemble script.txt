@@ -1,0 +1,2 @@
+Mogę w nim ustawić zmienne środowiskowe np:
+npm config set registry $NPM_MIRROR

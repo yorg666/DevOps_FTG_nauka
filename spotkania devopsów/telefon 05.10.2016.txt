@@ -1,0 +1,18 @@
+wdzwaniam się +44 20 8118 1077 + Conference Code: 216977
+########################################################################################
+Webex @ barclays please join via GFT Jabber 
+
+800 376 3076 (via Jabber: 9008003763076)
++44 20 8118 1077  (via Jabber: 900442081181077) 
+
+Conference Code: 216977
+
+Rozmowa z Andym
+jest tool który wykonuje deployment on Ipass - Jenkins deployment tool.
+build + testy to załadowane do Sonar Qube a z tego będzie zrobiony image.
+
+budowanie w CI a potem budujemy from scratch i puszczamy testy.
+Sonar qube = code coverage jeżeli są napisane unit testy
+Gdzie chcemy widzieć rezultaty testów ? = w TeamCity
+2 buildy jeden dla testów jeden budowany w sbt
+
