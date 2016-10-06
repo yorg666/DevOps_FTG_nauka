@@ -1,0 +1,5 @@
+Podobno mam vdi tylko którą - lite_desktop ?
+testowanie instalacji na radial ?
+skrypt powinien zmieniać nazwy katalogów z CamelCase na lowercase
+sprawdzam lite_desktop - udało mi się zalogować
+storzyć stronę na wiki, kto za co odpowiada + opis środowiska.

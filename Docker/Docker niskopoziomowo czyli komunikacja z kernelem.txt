@@ -1,0 +1,7 @@
+Docker komunikuje sie z kernelem hostujacego go systemu operacyjnego za pomoca
+: libcontainter lub kiedyś LXC
+: control groups - do zarządzania zasobami
+: kernel namespace - do porozumiewania się z kernelem
+: layered filesystem
+	:- btrfs
+	:- devmapper & loopback mounts 

@@ -1,0 +1,5 @@
+Docker dobrze daje sobie radę gdy działa na jednym komputerze.
+Gdy infrastruktura się rozbudowuje, potrzebne jest narzędzie do zarządzania. 
+
+DataCenter i DockerSwarm to alternatywne narzędzia dla Kubernetes
+ 

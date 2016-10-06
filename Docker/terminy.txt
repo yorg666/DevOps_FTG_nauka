@@ -3,3 +3,4 @@
 (namespaces) odizolowanie ich od systemu operacyjnego
 (runC) nowy format kontenerów: który implementuje standard OCF (ang. Open Container Format)
 (UFS, ang. Union File System) Ujednolicony system plików 
+(AFUS ang. Another Union File System) Kolejny ujednolicony system plików

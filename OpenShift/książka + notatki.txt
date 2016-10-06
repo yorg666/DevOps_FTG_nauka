@@ -1,6 +1,6 @@
 OpenShift for Developers: A Guide for Impatient Beginners 1st Edition
 
-Openshift to platforma kontenerów aplikacyjnych łącząca w sobie:
+Openshift to platforma kontenerów aplikacyjnych oparta o RedHata 7 łącząca w sobie:
 -PaaS platform as service
 -Docker
 -Kubernetes

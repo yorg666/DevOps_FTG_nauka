@@ -28,6 +28,8 @@ git log
 git log <ref>..<ref>
   show commits between the specified range. Useful for seeing changes from remotes:
   git log HEAD..origin/master # after git remote update
+  
+git-shortlog - Summarize git log output
 
 git show <rev>
   show the changeset (diff) of a commit specified by <rev>, which can be any

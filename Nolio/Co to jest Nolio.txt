@@ -1,0 +1,11 @@
+Nolio to oprogramowanie do zarządzania releasami aplikacji.
+Działa trochę podobnie do Tibco Designera, tzn krokowo tworzę process którym ma docelowo zdeployować aplikację we wskazane miejsce.
+Typowe akcje które mogę wykonać:
+- podłączyć się do Nexusa
+- pobrać listę artefaktów
+- zapisać listę artefaktów w tablicy(Array)
+- zapisać zawartość tablicy w pliku tekstowym
+- pobrać wszystkie  artefakty
+- na każdym z nich wykonać jakąś akcję
+- uruchomić JBossa
+- wykonać deploy aplikacji

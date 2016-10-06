@@ -1,0 +1,33 @@
+Docker - automatyzuje deployment dowolnej aplikacji w lekkim przenośnym samowystarczalnym kontenerze który będzie działał wszędzie czyli jak JAVA write once Run every where
+
+
+1) Jak zrobić żeby środowisko w jakim tworzy developer było takie samo na którym potem testujemy i wreszcie takie samo jak środowisko produkcyjne na którym odbywa się końcowy deployment
+
+2) Oszczędność miejsca kotenery są małe i mogą zajmować 20 ~ 30MB
+
+3) Uniknięcie efektu "configuration spaghetti" normalnie każdy host nawet po automatyzacji może być skonfigurowany trochę inaczej.
+
+4) Rozwiązanie problemu "Libs dependency hell" 
+
+5) Dobrze wpisuje się w metodologię ITIL
+
+Klasyczne podejście do wgrywania konfiguracji na zdalnego hosta
+: (for & scp/ssh & conf.d)
+: Puppet, Chef, Ansible (podobno bije na głowę wszystko)
+: Bare vs Iaas vs PaaS
+ Bare - kupujemy 20 komputerów
+ Iaas - wykupujemy 20 serwerów w chmurze hybrydowej (OpenStack, OpenShift,Nebula)
+ Pass - bawimy się API (OpenShift)
+: Continous Integration 
+
+
+Obrazy dokerowe są tylko do odczytu i działają jak szablony (templates)
+
+Dockerfile są jak makefile, rozszerzają bazowy obraz i produkują nowy
+
+Obraz = Klasa, Kontener = Obiekt
+Dockerfile + obraz bazowy = Konterner
+
+procesy w kontenerze uruchamiamy w foregroundzie a nie w backgroundzie bo inaczej kontener umrze
+
+ 

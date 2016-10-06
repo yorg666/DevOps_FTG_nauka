@@ -1,0 +1,13 @@
+Service jest to określona labelką nazwa która prowadzi do wybranego selektorem poda na jego określone porty
+Przykład
+Service naszaStrona która prowadzi do Poda w ktorym działa serwer http nginx na porcie 80
+
+Usługi są rozwiązywane na podstwie nazwy DNS wewnątrz klastra i chodzą na virtualnym i niezmiennym klastrowym adresie IP
+Za zarządzanie tymi adresami odpowiada kube-proxy (nakładka konfiguracyjna na iptables)
+kube-proxy  jest dużo szybsze niż hproxy,reverse-proxy
+Za zarządzanie dns-ami odpowiada kube-dns
+
+Trzy rodzaje udostępniania usługi
+: cluster ip
+: node port = cluster ip + na każdym nodzie usługa jest wystawiona na określonym porcie
+: loot balaner = node port + zewnetrzny loot balancer

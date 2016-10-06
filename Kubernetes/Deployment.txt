@@ -1,0 +1,3 @@
+Deployment oznacza wrzucenie szablonu poda do klastra z określonymi założeniami.(np łatwość aktualizacji za pomocą running update)
+
+Jednostki pośrednie to ReplicaSety w których znajdują się konkretne pody

@@ -1,0 +1,8 @@
+Pod to
+: grupa kontenerów widząca się wspólnie pod nazwą localhost
+: współdzielona przestrzeń sieciowa (adres IP i dyski)
+: jedna przestrzeń nazw (namespace)
+: wspóldzielone limity zasobów
+: współdzielone testy readeness
+
+Jest w stanie komunikować się bezpośrednio z kontenerami z innych podów

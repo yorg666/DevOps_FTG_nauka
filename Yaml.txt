@@ -1,0 +1,1 @@
+Yaml to nowy format danych taki jak xml czy JSON
