@@ -12,6 +12,9 @@ git diff
 
 git status
   show files added to the staging area, files with changes, and untracked files
+  
+git status -s
+git status -s -b
 
 git log
   show recent commits, most recent on top. Useful options:
