@@ -1,0 +1,9 @@
+instaluję TeamCity w c:\TeamCity
+wskazuję port działania 8111
+TeamCity jest dostępny pod http://localhost:8111
+Agent properties zostały zapisane do c:\TeamCity\buildAgent\conf\buildAgent.dist.properties
+Data Directory location on the TeamCity server machine: C:\ProgramData\JetBrains\TeamCity
+
+Tworzę konto Adminsitratora
+Username forTeamCity
+Password forTeamCity4567!

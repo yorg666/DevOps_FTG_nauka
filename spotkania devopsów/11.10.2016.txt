@@ -1,0 +1,5 @@
+﻿delivery pipeline
+tworzenie RC kandydata
+4.11 - koniec RC kadydatów = przygotowanie do releasu
+
+rozwiązany problem LDB conectivity

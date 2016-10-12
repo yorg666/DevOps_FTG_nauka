@@ -1,0 +1,29 @@
+Task Mateusza:
+W TeamCity  musiał stworzyć joby które
+- budują obrazy
+- publikują obrazy
+- wrzucają do Nexusa
+
+Jest osobny task publikujący
+Jest osobny task promujący
+
+Tag wersji konfiguracji jest 4 cyfrowy bo zmienia się częściej niż wersja aplikacji
+Tag wersji aplikacji jest 3 cyfrowy
+
+W OpenShift Image Streams to odpowiednik Dockerowych rejestrów
+Route wystawia Service na świat tzn mapuje wewnętrzny adres ip i dns na widoczny na zewnątrz
+
+Service to pogrupowane porty wystawione pod odpowiednim adresem IP i portem
+
+Promocja w Openshift odbywa się przez uruchomienie builda image-promoter
+
+W Git trigger manualny - odpala task  publish w TeamCity
+
+Projekt w Intelij Idea, konfiguracja jest pakowana i wysyłana do Nexusa
+
+Są dwa nexusy, jeden przechowuje dockerowe obrazy
+Drugi przechowuje artefakty czyli binarki i konfigurację
+
+Docker ENDPOINT vs CMD
+
+aPass

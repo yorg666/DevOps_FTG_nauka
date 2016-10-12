@@ -1,0 +1,4 @@
+Service oriented - zorientowanie na usługi
+cross functional teams
+ITIL jest jak programowanie funcyjne opisuje co ma być zrobione a nie jak ma być zrobione.
+ Zarządzanie usługą dzieli się na service support i service delivery

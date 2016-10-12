@@ -1,0 +1,24 @@
+Jestem częścią RND Research and Deployment
+
+Wspieram następujące zespoły:
+G5
+TDS - TDaaS
+PNF
+Stress
+Nifi
+
+Moim przełożonym jest Jan Pustelnik / Robert Budźko
+Zadania będę dostawał od Michała i Andyiego
+Priorytety będę ustalała w Michałem wspólnie
+
+Taski będę miał w Agile Central/ dawniej w Jira
+
+Poziom mojej pracy to "Plan delivery" wskazuje developerą co i gdzie mają zrobić ale nie rozwiązuję za nich technicznie problemów.
+
+To co mogę dostać na początku do zrobienia to przebudowanie jobów w Teamcity na szablony
+
+Rest Api poczytać!!
+Deployment descryptor poczytać!!
+
+Apache parque poczytać
+AWS poczytać

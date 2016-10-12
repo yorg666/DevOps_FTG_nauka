@@ -1,0 +1,39 @@
+﻿how we gonna deliver delivery pipeline
+chenge of queue names dev1..dev10 uit1..uit10
+nifi properties 
+
+tagged version in stash and bitbucket
+enough agents 
+
+straight to S2I = S2I build inside of image
+
+clearning out all obsacles
+lary brimmer ? RTB contact
+dary mills ?   RTB contact
+
+test that harris puts together
+avro file
+
+sis fisscus pll queue
+
+teamcity
+nifi  tokenizaja konfiguracji dla releasów
+nifi instalacja na radio
+5g changess
+stress
+pnf release
+
+aPaaS deployment
+checkout of procedures deployment
+
+which aplication = everything
+wszystkie niezaleznie wersjonowane
+
+no roadmap
+
+release of whole TDS platform !!
+mid november , mid december
+
+documentation
+increment automated tests
+

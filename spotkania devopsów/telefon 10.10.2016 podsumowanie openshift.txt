@@ -1,0 +1,12 @@
+Mozesz mi przeslac maila z obrazem flow Docker DevOps Stack Example 
+i link do arykułu pros and cons Dockerfile vs S2I
+
+Git dla konfiguracji + S2I bezprośrednio z źródeł docelowo bedziemy używali temacity jeżeli znajdzie się wiecej agentów.
+
+S2I z BitBucket problem mało angentów linuxowych
+
+S2I daje możliwości  kontroli uprawnień w momencie budowania obrazu
+
+5G moze migrować z Dockera do S2I
+
+Jeden sposób budowania dla wszystkich projektów

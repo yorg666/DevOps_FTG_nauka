@@ -1,0 +1,35 @@
+﻿wspólny obraz dla functions
+tworzy kontener z agentem i podlaczony do temacity
+3 agentów z aPass który buduje standardowego Dockera
+
+nie z mavenem tylko z sbt w srodku
+Big cloud  zonbordowac aplikacje
+
+teamcity triggeruje build w openshift
+
+Test in aPaaS Flow
+1) checking code
+buduje w teamcity z future branch - build jest triggerowany
+w efekcie powstają jary czyli artefakty czyli binarna wersja aplikacji
+w Nexusie sa artefakty i obrazy
+
+aPass buduje artefakty   Docker Registry/Nexus
+
+snapshots build jak je przechowujemy
+nifi team shell scripts jars - full tarball to nie jest kompletna aplikacja - tu w dokerze załatwia to skrypt
+
+dla innego teamu jar + pom file jak w dockerze wyekstraktować klasę main
+
+To co chciałbym zrobić to puścić build dla poszczególnych teamów.
+
+docker register store Docker images + tars + jars
+
+artefakty są storowane w Nexusie żeby budować tylo raz
+
+testy accepted i regression
+
+wątpliwości o tym czy to co jest testowane jest dokładnie tym co zostało napisane przez programistę
+
+obraz flow zostanie zaktualizowany
+
+

@@ -1,0 +1,4 @@
+VPS - Wirtualny prywatny serwer
+efemeryczny - krótkotrwały, szybko przemijający
+ITIL  Information Technology Infrastructure Library
+TCO - Total Cost of Ownership
