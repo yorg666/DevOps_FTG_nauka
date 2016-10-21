@@ -1,0 +1,70 @@
+visio lokalnei na gft
+
+problemy:
+S2I
+
+stress buduje wszystko z Gita za pomocą S2I
+środowiska nie sa tanie wiec akcja desktop development () lokalne budowanie dockera na windows 7 = wiec to nie moze być docer, lub windows 10 który ma wsparcie 
+dlatego nie mozemy tedsotwać artefaktów z opensfifta tylko akrtefakty lokane
+
+development i testowanie na maszynach lokanych
+
+VCS dla RTB zeby przechowywali konfigurację do realeasu na Pre-prod
+
+lokalny rejest - wszystko co jest po buildzie
+nexus - te które nas interesują  np potencjalu RC, potrzebne artefakty
+
+lokalne testowanie to zbudowanie aplikacji w IDE i puszczenie testów
+
+#################################################################################################################################################
+
+shaping the pipeline
+
+nolio vs chef do deployowania środowiska = Nolio
+Nolio = releaase mamnagement tool = clear way to deployemnt of our aplication, the same preocerure on all envoroments
+chef more close to hardware level
+preparation of base enviroment on OS level
+wszystie zmiany muszą zostać zakceptowane żeby można było użyć recept Chefa
+
+SonarQube = no working plugin for scala
+
+
+dev local testing
+-> nie mozemy robić najprostrzysch testów loklanie, bo używamy obrazów które mozna testować tylko na openshifcie
+-> Stress budujemy S2I i robimy deploy i testy na openshift
+-> jest problem kiedy kilka zespołów chce testować swoje zmiany na tym samym środowisko, bo jest (środowisk) za mało
+-> transormation service - nie da się zrobić testów lokalnie - info od Petera
+-> budujemy komponenty w CI, łączymy te kompienty w obraz -> testy są wyknywane na OSI platform UAT lokalnie Integration lokalnie + środowisko (aPaaS)
+-> mamy środowiko na OpenShifcie, gdzie testujemy czy aplikacja działa, potrzebuyjemuy wiećej środowisk na post-build testy 
+-> nawet jak testujemy lokalnie to gadamy z klaster, gadamy z bazą danych i potrzebujemy virtualizacji
+-> wyizolowane środowisko testowe w aPaaS
+-> jak dostarczyć virtualne lokalne środowisko
+-> używanie zewnętrzych serwisów ale uruchamianie aplikacji lokalnie a nie w aPaaS !
+-> OSI nie ma pieniedzy na więcej środowisk
+-> lokalne środowisko + kolejki
+-> wirutalne kolejki dla kilku środowisk
+-> cieżko jest zwirtualizować transormation service 
+-> mozemy uruchamiać wszystkie serisy lokalnie w Stress - projekcie
+-> chcemy we wszystkich projektach puszczać lokalne testy.
+-> koszty są 5 razey wieksze niż oczekiwano
+-> 50 000 dolarów koszt obecny użycia CPU 
+-> wyłączanie nipotrzebych podów w aPaaS kiedy nie są używane.
+-> czy mozemy usunąć zależność od aPaaS
+-> rozwiązanie problemu wirtualizacji w Stressie - odpalamy tyle środowisk ile potrzebujemy
+-> jakie jest rozwiazanie -run same service against as many enviroment we want.
+-> share services enviroment resources like selector, nie docker nie vagrant, nie virtualbox
+-> nie chcemy dstaczać każdego buildu od artefact repository, nawet w CI gdy buduemy z feature branchy nie storujemu artefaktów tylko trzymamy je lokalnie
+-> loklany rejest aPaaS i Ci może by używamy lokalnie
+-> Artifact repo -> nie przechwowuje obrazów bo fizycznie Nexus 2.8 nie moze tgo robić, dlatego trzymamy to w aPaaS  rejestrze.
+-> Release Maangement Tool jest obok CI, śledzienie ,audyty i wersjonowanie 
+-> RTB VCS osobne repo od naszego VCS, z ograniczonymi uprawnienia, wygodnie bedzie RTB tak pobierać konfigurację niż z naszego VCS
+-> To co oglądamy to wizja przyszłośći, wiec co mamy a czego nie mamy
+-> i Stress i 5G  mają ten flow tylko z kilkowa drobnymu różnicami
+-> 5G również może testować lokalnie
+-> 5G migruje się do starej architektury StreSS
+- czy budujemy konterenty dokcerowe i testujemy je poza aPaaS czy budujey za pomocą S2I 
+-> Andy zdecydował ze budujemy artefakty zewnetrznie i pakujemy je w aPaaS
+-> budujemu cały obraz dokerowe w aPaaS ale używamy artefaktów budowanych zewnętrznie
+-> buduje wiecej niz jeden komponent, lub cche wejść z interakcję z innym kompponenentem, komponent x i y = muszę zbudować je po kolej
+-> nie mamy feature teamów
+

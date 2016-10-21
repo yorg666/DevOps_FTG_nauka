@@ -1,0 +1,28 @@
+﻿Radio before 05.11.2016
+peter cooked nifi Radio
+
+teamcity team, agenty na openshifcie, domysle pool które mozemy uzyc 3 agentów dla budowanie w openshifcie oparte o unixa, do budowania artefaktów maven + java + sdk
+spotkanie rtb team w sprawie naszych przygotowań, bez procedury
+procedura releasu - kto co kontroluje, tests evidence, change in aPass - 
+
+sbt jest na każdym środowisku poza S2I
+sbt jest dodawane on demand podczas budowania.
+
+NIFI no process to create image, 4 services  4 repos = help docker images ?
+standard build. ?
+
+prod radial configuration ?
+automated test on nifi ?
+
+mariusz testuje 5G
+/nifi/data
+
+5G worker is listening to communication to nifi
+
+mariusz zapytał gurava how to test nifi
+
+harish framework for nifi testing
+
+bunch of new radio services.
+
+testing strategy ? czekamy na DoD

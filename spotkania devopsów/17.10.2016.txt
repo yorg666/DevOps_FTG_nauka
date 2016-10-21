@@ -1,0 +1,12 @@
+﻿radio,cost of aPaaS
+
+jeden z zespolów uzywana vagrant 
+testowanie featurów na lokalnych machinach za pomoca vagrant
+CI, nifi and Agile Central, old dash board map to Agile Central
+
+couple of slides ,journej
+
+partial instalation- backap skrupt, full isntall
+run nifi on uat2
+
+jeżeli zmienisz mongoDB

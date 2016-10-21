@@ -1,0 +1,9 @@
+gura nifi
+
+agenci unixowy SBT nawet jak sie wymusi jave 1.8 do buildu nie rozwiazuje problemu
+cos po stronie agenta
+logi UIT2
+
+nifi instlaacja na radio for smoke installation rise CR
+we need to change task configuration
+

@@ -1,12 +1,5 @@
 Jestem częścią RND Research and Deployment
 
-Wspieram następujące zespoły:
-G5
-TDS - TDaaS
-PNF
-Stress
-Nifi
-
 Moim przełożonym jest Jan Pustelnik / Robert Budźko
 Zadania będę dostawał od Michała i Andyiego
 Priorytety będę ustalała w Michałem wspólnie

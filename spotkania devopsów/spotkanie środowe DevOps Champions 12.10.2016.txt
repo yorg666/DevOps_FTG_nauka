@@ -32,4 +32,6 @@ wątpliwości o tym czy to co jest testowane jest dokładnie tym co zostało nap
 
 obraz flow zostanie zaktualizowany
 
+Globalny meeting z devopsami
+
 
