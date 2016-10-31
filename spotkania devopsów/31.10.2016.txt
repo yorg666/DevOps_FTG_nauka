@@ -1,0 +1,11 @@
+co bedzie w release - info od zespolów
+process releasu przygotowanie - kto co bedzie robil
+radial nadal nie dzila- zmiana config change, co gdzie dziala na jaki
+runbook dla nifi - przygotowal Gourav
+Gourav stworzyl CR
+
+teamlead- michal , put together powerpoint prez, where we where in devops 6 miesiecy temu, gdzie jestesmy teraz gdzie bedziemy.
+jakie kroki musismzy poczynic zeby osiagnac to co chcemy, czyli release.
+friday
+
+cloudera - lokalnie jak all-in-one

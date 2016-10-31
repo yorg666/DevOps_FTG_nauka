@@ -1,0 +1,12 @@
+changes coordinates, ability to rise CR
+session how to do this.
+chase te appovals to finish CR
+
+platforma ma wiele problemów
+Mercury nie bedzie ruszany
+
+new tar ball for 5G, install on uat
+Gourav zostanie koordynatorem zmiany
+
+
+ingestor project in teamcity - testy z develop branch - sprawdzic gdzie loguje.

@@ -1,0 +1,16 @@
+przejecie spotkania w srode
+release frame - november 18  
+RC november 07
+no business critical deliveries form 07-18
+strona Confluence o datach releasu
+kalendarz RTB  releasów i deploymentów
+
+radial lower executor numbers
+
+2 tygodnie - code freeze
+debie
+
+java issues
+
+info od Gourav fix for bbd
+5g on radial UAT permissions issue.

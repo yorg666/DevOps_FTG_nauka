@@ -1,0 +1,21 @@
+proxy on prod servers
+install Nifi on Prod radial
+logs for impala and hive issues
+
+move nifi configuration to enviroment without templates
+
+##############################################################
+
+Testing strategy for TDS
+S2I - openshift AaaS - daje wiele możliwość na budowanie środowisk, konteneryzacja
+Nifi nie jest jeszcze na OSv3
+Stress ma wszystko w OSv3
+
+masz artefaty i kod chcesz uzyc tego do zbudowania srodowiska
+bierze kod, i tworzy obraz który moze dzialac w OSv3
+bierzemy artefakty które zostały zbudowane poza OSv3 i zostały wrzucone do Nexusa i są przetestowane
+obrazy są przechowwane w Image-Registry
+
+UAT to jest ostatnie moment w którymn my możemy coś zrobić
+hotfix tylko na SIT
+

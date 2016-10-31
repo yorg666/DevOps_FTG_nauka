@@ -1,0 +1,16 @@
+﻿add phone numer - wednesday
+drive agenda instead of Andy
+stand up - road map
+devops champios meetings - wednesday
+
+taget status- jakie taski must be done.
+create bob - for tst purposes
+secrety ? vlad peter
+
+Dodać numer telefonu do poczty
+prowadzić standupy za Andiego
+prowadzić devopsChampions
+
+zrobić devops status
+
+stworzyć boba na potrzeby testowe. to jak to zrobić wiedzą Vlad i Peter (jak poradzić sobie z secretami)

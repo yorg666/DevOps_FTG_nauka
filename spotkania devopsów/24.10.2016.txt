@@ -1,0 +1,39 @@
+Wendstady
+
+Michal
+TC problems raported by guroav
+delivery pipeline on devops champions page
+
+I have modified few jobs in Stress project by adding additional Agent REquirement, to make sure they run only on Windows agents
+
+Mateusz Bojzan
+rds-rates-extractor
+flow from feature branch till login into linux machine in Open shift
+
+access to
+Agile Central - I dont have permissions, or I`m not added to correct grous, becaouse I dont see much there, Simon
+
+No Permissions to edit  Confluence pages send reminder to Kevin Jackson
+
+Waiting for Intelji Idea
+
+Plan for today, check the flow of Stress build to get familiar with S2I build
+
+
+#####################################################################################################################
+
+nifi flow on mercury, talk to RTB to open
+every flow on mercuty to retain flow instead of deleting them
+
+radial-prod new installation
+
+que to ingestor
+
+radio is working, we are over permission issues - sill its problems
+we dont have any openshift radial-pararel
+cant execute hive queues from scala
+run hive queues on radial
+radial UIT
+
+opisy spotkan z innymi zospolami
+

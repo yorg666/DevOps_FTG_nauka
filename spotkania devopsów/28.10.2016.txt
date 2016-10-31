@@ -1,0 +1,16 @@
+jak developowac wiele flowów jednoczesnie w Nifi ?
+parsing 600 messages zajmuje caly dzien - performance issues in Nifi
+
+nifi - run on own unix account  ???
+stworzyli wiele konto 
+sysFisusFtpnifi
+
+jedyne dobre konto sysfiscusNifi{Nifi}
+
+sysficsuspod
+nie uzywamy juz sysfiscusNifipod
+
+jest balagan ale Andy o nim wie
+
+
+
