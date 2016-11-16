@@ -1,0 +1,15 @@
+Gurav free from radial stuff
+help from me and marius
+
+status call z FT
+czy sa blokery
+jaki jest status runbook
+
+Ryan jest ze stanów 
+
+deployment - ja bede za to odpowiedzialny
+
+jak skoncze deployment on UAT gorav moze testowac
+
+RTB calendar = rise a CR =confirm with RTB
+

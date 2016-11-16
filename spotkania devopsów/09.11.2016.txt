@@ -1,0 +1,24 @@
+Stress IDLU flow w Nifi jest naprawiony po kolejnej instalacji
+obecnie jest 5 flowów
+
+mariusz
+fix 5g test - problem was with dependency after transfer 
+fix test- solar message parsing
+
+gaurav
+we started with Nifi instalation, and 5g worker.
+
+Today:
+RC - bedzie dzis,  mongoDB jest naprawione
+TC testy dla fiscus ingestor testy E2E zawsze pokazuja green - wczoraj byly trzy bledy a mimo to bylo zielono.
+plugin for test repports 
+
+andy
+radial 12.11.2016 - wszystkie teamy cos robia 
+mysimy dostosowac sie i zrobic osobnego CR
+
+
+
+
+
+myself

@@ -131,3 +131,5 @@ nadal nie dział więc włączam dodatkową opcję w pliku Vagrantfile
 
 nie doczytałem KURWA  że virtualbox jest wymagany w wersji niższej niż 5.1.6 czyli np 4.3.40
 a vagrant musi być w wersji niższej niż 1.8.5 czyli np 1.8.4
+
+loguję sie na stronę

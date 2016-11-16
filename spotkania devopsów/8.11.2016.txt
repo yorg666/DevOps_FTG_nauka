@@ -1,0 +1,24 @@
+Andy
+
+Garouv
+release coordination Nifi Radial UAT single flow
+running tests
+
+Mariusz
+Nifi end-to-end test
+test evidence from manual test for 5G-worker
+
+mongoDB almost fixrd  still need to be tested 
+Kamil nie potwierdzil transforamtion service
+
+co jeszcze musimy zrobic w zwiazku z migracja Mercury na Radiala
+
+name of branch is not related , because its 0.7.0
+0.7.0 is is develop
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+relase branch base upon develop
+we can start with nifi
+
+
+

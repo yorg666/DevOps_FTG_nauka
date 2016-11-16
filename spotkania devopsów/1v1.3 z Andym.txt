@@ -1,0 +1,20 @@
+﻿
+
+Radial delay 
+
+signoff 2 gotowe 1 nie ma
+go nogo migration.
+
+
+
+mongo dbl   - zrobienie to na produkcji  w przyszłym tygodniu.
+
+vlad + peter wyjasniają problemy
+
+proplemy konkurencyjne
+
+dependency manager 2 na merurym 1 na radialu.
+data set -conflict with eachother
+
+Lake roznica 
+

@@ -1,0 +1,14 @@
+﻿Spotkanie z Michałem w celu przygotowania prezentacji devops status dla Andiego
+
+enviroment set  wskazuje na taga w gicie
+
+Nifi elimination SPOF
+
+dodać kolumnę
+todo
+todo later
+
+dodać kolumnę z ważnoscia
+taski przepisać na epiki do Agile Central
+epiki rozbić na taski
+

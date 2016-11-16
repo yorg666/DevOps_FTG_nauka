@@ -1,0 +1,17 @@
+nifi release only on radial UAT and radial prod
+backup script take a time- zrobimy single flow install nie robimy clean install
+powinnismy zmienic backup technique.
+stop nifi, copy of file, start nifi , insert flow
+
+nifi jest developowany przez 3 zespoly, zespol ktory skonczy powienien dostarczyc RC
+code freeze w poniedzialek
+
+code from develop - call with feature teams
+latest from develop - proposition from Andy
+
+list of components from feature teams - wyslac maila.
+
+end of Monday.
+
+Gourav gonna ask simon definition of ready.
+

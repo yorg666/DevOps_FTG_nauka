@@ -1,0 +1,37 @@
+Co robilem:
+szkolenie z wystawiania produkcyjnego CR
+relase na podstwie transforamtion-service
+
+Problemy:
+mala ilosc miejsca na dysku, zglosilem incydent i czekam na zwolnienie miejsca
+
+Co dzis bede robil
+przygotowanie do releasu
+sprawdzenie skryptów w katalogu devops/aPaaS
+I want to check my notes against TDS Release Process Runbook
+
+
+Gourav
+November Release Status - email without response, will you send kindly reminder ?
+nifi transforamtion-service - waiting, tarball
+
+Andy
+vlad or peter - make way of katalog of katalog  resync data from mercury to radial Radial
+
+Mariusz
+
+devops pack zrobic dla Andiego
+RC -> build artifact -> snapshot -> deploy on radial uat
+release 7.0 -> in TC run job to create tar 7.0
+
+we are realasing only certain flows
+
+RC builds and tests in TC
+
+Testy:
+perform all test and gather all test evidences + documents for RTB  for dry run
+automatic tests + manual tests
+
+
+Rozmowa statusowa w sprawie RC
+

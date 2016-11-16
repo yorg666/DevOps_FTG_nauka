@@ -1,0 +1,28 @@
+﻿Gotowe rc
+
+
+data catalog -  linked to transformation service  meesge
+dependency manager 
+data relay -
+
+
+czekamy na Kamila, który zrobil juz pull reguesta ktory bydz moze zawiera juz fixy ale Michal Majcherski musi to dopiero sprawdzic
+Transformation-service
+Dependecy Manager
+
+Wdrozone
+5G Recon Worker
+Nifi
+
+
+Mariusz
+test report/evidence - dla 5G avro data is different 
+buily w TC które przeszly
+
+przygotuje dzis raport - pracuje nad nowym testem 5g gdzie wszystkie dane input są oddzielone
+
+Gourav
+5g recon worker - radial uat - mariusz przetestuje
+relase/1.5.1
+
+no prod release this week, but we need to be ready with RC
